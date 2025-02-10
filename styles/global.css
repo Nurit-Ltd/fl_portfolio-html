@@ -1,0 +1,451 @@
+/* Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+
+/* Root Variables */
+:root {
+    --fontInter: "Inter", serif;
+    --bg-primary: #17171F;
+    --bg-secondary: #1E1F2A;
+    --text-primary: #FFFFFF;
+    --text-secondary: #D0DEFF;
+    --text-neutral: #F3F3F3;
+    --text-neutral-tertiary: #CDCDCD;
+    --border-primary: #2F303E;
+    --border-secondary: #3E4051;
+    --color-darkSky: #6F93FE;
+    --white-70p: rgba(255, 255, 255, 0.7);
+    --white-40p: rgba(255, 255, 255, 0.4);
+    --white-2p: rgba(255, 255, 255, 0.02);
+}
+
+
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: var(--fontInter);
+    background: var(--bg-primary);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+/* Reset CSS */
+
+
+/* Global styles */
+
+.container {
+    max-width: 1420px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+figure {
+    display: flex;
+}
+
+/* Global styles */
+
+
+
+
+
+/* Navbar CSS starts here */
+.navbar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 16px 48px;
+    border-bottom: 0.5px solid var(--border-primary);
+
+    .logo-wrapper {
+        display: flex;
+
+        .logo {
+            width: 48px;
+            height: auto;
+        }
+    }
+
+    .nav-items-wrapper {
+        max-width: 1420px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        justify-content: space-between;
+    }
+
+    .nav-menu-items-wrapper {
+        display: flex;
+        align-items: center;
+
+        .nav-link {
+            padding: 4px 12px;
+            color: var(--text-neutral-tertiary);
+            font-size: 16px;
+            word-break: keep-all;
+        }
+
+        .nav-link.active {
+            color: var(--text-neutral);
+            border-bottom: 1px solid var(--text-neutral);
+        }
+    }
+
+    .search-box {
+        display: flex;
+        flex-grow: 1;
+        position: relative;
+        border-radius: 9999px;
+        overflow: hidden;
+
+        .search-input-box {
+            padding: 12px 48px 12px 16px;
+            border-radius: 9999px;
+            width: 100%;
+            border: 1px solid var(--border-primary);
+            background: var(--bg-primary);
+            outline: none;
+            font-size: 16px;
+            color: var(--white-40p);
+        }
+
+
+        .search-button {
+            background: transparent;
+            border: none;
+            outline: none;
+            position: absolute;
+            top: 50%;
+            right: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0px 16px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            height: 100%;
+            border-top-right-radius: 9999px;
+            border-bottom-right-radius: 9999px;
+
+        }
+    }
+
+    .account-link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px;
+        background: var(--bg-secondary);
+        color: var(--text-primary);
+        font-size: 16px;
+        line-height: 1.15em;
+        border-radius: 10px;
+        border: 1px solid var(--border-secondary);
+    }
+}
+
+
+
+/* Navbar CSS ends here */
+
+
+/* Portfolio Header CSS starts here */
+
+.portfolio-header-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 42px 0px;
+
+    .avatar-username {
+        display: flex;
+        align-items: start;
+        gap: 16px;
+
+        .user-avatar {
+            width: 80px;
+            aspect-ratio: 1;
+            border-radius: 9999px;
+            object-fit: cover;
+        }
+
+        .name-wallet {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .user-name {
+            font-size: 48px;
+            line-height: 1.2em;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .wallets {
+            font-size: 16px;
+            color: var(--text-primary);
+        }
+    }
+
+    .balance-changes {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding-right: 50px;
+
+        .balance {
+            font-size: 48px;
+            line-height: 1.2em;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .changes {
+            font-size: 16px;
+            color: var(--white-40p);
+
+            .percetage-change {
+                color: var(--text-primary);
+            }
+        }
+    }
+}
+
+
+
+/* Portfolio Header CSS ends here */
+
+
+
+/* Portfolio Table Controls CSS starts here */
+
+.table-controls-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .controls {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        .control-button {
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6.5px 12px;
+            background-color: var(--bg-secondary);
+            border-radius: 10px;
+            border: 1px solid var(--border-secondary);
+            font-size: 16px;
+            color: var(--text-primary);
+            cursor: pointer;
+
+            &:not(:last-child) {
+                font-size: 14px;
+                padding: 8px 12px;
+                line-height: 1.15em;
+            }
+
+            .control-button-left-icon {
+                height: 16px;
+                width: auto;
+                margin-right: 8px;
+            }
+        }
+    }
+
+    .table-search {
+        display: flex;
+        align-items: center;
+        max-width: 240px;
+        width: 100%;
+        position: relative;
+        border-radius: 9999px;
+        overflow: hidden;
+
+        .search-input-box {
+            padding: 12px 40px 12px 16px;
+            border-radius: 9999px;
+            width: 100%;
+            border: 1px solid var(--border-primary);
+            background: var(--bg-primary);
+            outline: none;
+            font-size: 16px;
+            color: var(--white-40p);
+        }
+
+
+        .search-button {
+            background: transparent;
+            border: none;
+            outline: none;
+            position: absolute;
+            top: 50%;
+            right: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0px 16px 0px 8px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            height: 100%;
+            border-top-right-radius: 9999px;
+            border-bottom-right-radius: 9999px;
+
+        }
+    }
+}
+
+
+/* Portfolio Table Controls CSS ends here */
+
+
+/* Table section CSS starts here */
+
+/* Previous styles remain the same until .row-content */
+.table-content-wrapper {
+    background: #1a1a1a;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+th {
+    text-align: left;
+    padding: 12px;
+    color: #999;
+    font-weight: normal;
+    border-bottom: 1px solid #333;
+    width: calc(100%/5);
+
+    &:nth-last-child(2) {
+        width: 150px;
+    }
+
+    &:last-child {
+
+        text-align: end;
+        width: 90px;
+    }
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #333;
+    vertical-align: text-top;
+}
+
+tr:nth-child(odd) {
+    background-color: #1a1a1a;
+}
+
+tr:nth-child(even) {
+    background-color: #252525;
+}
+
+.token-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.token-icon {
+    width: 30px;
+    height: 30px;
+    background: #444;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 150px 90px;
+    gap: 12px;
+    align-items: center;
+    width: 100%;
+
+    &:nth-child(even, odd) {
+        width: calc(100%/7);
+    }
+}
+
+.multi-header {
+    color: #3498db;
+    cursor: pointer;
+    text-decoration: underline;
+    width: fit-content;
+}
+
+.sub-content {
+    display: none;
+    margin-top: 10px;
+}
+
+.sub-content.visible {
+    display: block;
+}
+
+.sub-item {
+    padding: 8px 0;
+}
+
+.trade-button {
+    color: #3498db;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.action-cell {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+}
+
+.menu-icon {
+    color: #666;
+    cursor: pointer;
+}
+
+.wallet-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.wallet-address {
+    color: #999;
+    font-size: 0.85em;
+}
+
+/* Table section CSS ends here */

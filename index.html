@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FL - Portfolio</title>
+    <link rel="stylesheet" href="./styles/global.css" />
+  </head>
+  <body>
+    <!-- Navbar starts here -->
+
+    <nav class="navbar">
+      <div class="nav-items-wrapper">
+        <figure class="logo-wrapper">
+          <img class="logo" src="./public/images/fl-logo.svg" alt="FL-Logo" />
+        </figure>
+        <ul class="nav-menu-items-wrapper">
+          <li class="nav-item"><a class="nav-link" href="#">New Tokens</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Trending</a></li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Portfolio</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#">Referral</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Leaderboard</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Launch Token</a>
+          </li>
+        </ul>
+        <div class="search-box">
+          <input
+            class="search-input-box"
+            type="text"
+            placeholder="Search Token"
+          />
+          <button type="submit" class="search-button">
+            <img src="./public/images/search-icon.svg" alt="Search-icon" />
+          </button>
+        </div>
+        <a href="#" class="account-link">
+          <img src="./public/images/user-icon.svg" alt="User-icon" />
+          <p>Account</p>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Navbar ends here -->
+
+    <main>
+      <!-- Portfolio Header starts here -->
+
+      <section class="portfolio-header">
+        <div class="container">
+          <div class="portfolio-header-content-wrapper">
+            <div class="avatar-username">
+              <figure class="avatar">
+                <img
+                  class="user-avatar"
+                  src="./public/images/avatar-icon.svg"
+                  alt="Avatar"
+                />
+              </figure>
+              <div class="name-wallets">
+                <h2 class="user-name">Portfolio</h2>
+                <p class="wallets">All Wallets</p>
+              </div>
+            </div>
+            <div class="balance-changes">
+              <h2 class="balance">00,000 XRP</h2>
+              <p class="changes">
+                <span class="percetage-change">+00,0%</span> 24H Change
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio Header ends here -->
+
+      <!-- Portfolio Table Controls starts here -->
+      <section class="table-controls">
+        <div class="container">
+          <div class="table-controls-content-wrapper">
+            <div class="controls">
+              <button class="control-button">
+                <img
+                  class="control-button-left-icon"
+                  src="./public/images/sliders-icon.svg"
+                  alt="sliders-icon"
+                />
+                Customise
+                <img
+                  src="./public/images/chevron-down-icon.svg"
+                  alt="chevron-down-icon"
+                />
+              </button>
+              <button class="control-button">
+                <img
+                  class="control-button-left-icon"
+                  src="./public/images/wallet-icon.svg"
+                  alt="wallet-icon"
+                />
+                Wallets
+                <img
+                  src="./public/images/chevron-down-icon.svg"
+                  alt="chevron-down-icon"
+                />
+              </button>
+              <button class="control-button">
+                <img
+                  class="control-button-left-icon"
+                  src="./public/images/star-icon.svg"
+                  alt="star-icon"
+                />
+                Refresh PnL
+              </button>
+            </div>
+            <div class="table-search">
+              <input
+                class="search-input-box"
+                type="text"
+                placeholder="Search Inside Portfolio"
+              />
+              <button type="submit" class="search-button">
+                <img src="./public/images/search-icon.svg" alt="Search-icon" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio Table Controls ends here -->
+
+      <!-- Tables section starts here -->
+      <section class="table-section">
+        <div class="container">
+          <div class="table-content-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>TOKEN</th>
+                  <th>WALLET</th>
+                  <th>BOUGHT</th>
+                  <th>SOLD</th>
+                  <th>REMAINING</th>
+                  <th>PnL</th>
+                  <th>ACTION</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="token-cell">
+                      <div class="token-icon">F</div>
+                      <span>TOKEN</span>
+                    </div>
+                  </td>
+                  <td colspan="6" style="padding: 0">
+                    <div style="padding: 12px">
+                      <div class="row-content">
+                        <div class="multi-header" onclick="toggleContent(this)">
+                          Multi (3) ▼
+                        </div>
+                        <div>100 XRP<br />10 TOKEN</div>
+                        <div>50 XRP<br />5 TOKEN</div>
+                        <div>50 XRP<br />5 TOKEN</div>
+                        <div>25 XRP<br />+12.5%</div>
+                        <div class="action-cell">
+                          <span class="menu-icon">⋮</span>
+                          <button class="trade-button">Trade</button>
+                        </div>
+                      </div>
+                      <div class="sub-content">
+                        <div class="sub-item">
+                          <div class="row-content">
+                            <div class="wallet-info">
+                              <span>Wallet 1</span>
+                              <span class="wallet-address">rDFX...ivmN</span>
+                            </div>
+                            <div>40 XRP<br />4 TOKEN</div>
+                            <div>20 XRP<br />2 TOKEN</div>
+                            <div>20 XRP<br />2 TOKEN</div>
+                            <div>10 XRP<br />+10.0%</div>
+                            <div class="action-cell">
+                              <span class="menu-icon">⋮</span>
+                              <button class="trade-button">Trade</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="sub-item">
+                          <div class="row-content">
+                            <div class="wallet-info">
+                              <span>Wallet 2</span>
+                              <span class="wallet-address">rSKv...lsiA</span>
+                            </div>
+                            <div>35 XRP<br />3 TOKEN</div>
+                            <div>15 XRP<br />2 TOKEN</div>
+                            <div>20 XRP<br />1 TOKEN</div>
+                            <div>8 XRP<br />+15.0%</div>
+                            <div class="action-cell">
+                              <span class="menu-icon">⋮</span>
+                              <button class="trade-button">Trade</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="sub-item">
+                          <div class="row-content">
+                            <div class="wallet-info">
+                              <span>Wallet 3</span>
+                              <span class="wallet-address">raGh...sRIE</span>
+                            </div>
+                            <div>25 XRP<br />3 TOKEN</div>
+                            <div>15 XRP<br />1 TOKEN</div>
+                            <div>10 XRP<br />2 TOKEN</div>
+                            <div>7 XRP<br />+12.5%</div>
+                            <div class="action-cell">
+                              <span class="menu-icon">⋮</span>
+                              <button class="trade-button">Trade</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tables section ends here -->
+    </main>
+  </body>
+</html>
