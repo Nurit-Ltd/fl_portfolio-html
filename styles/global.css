@@ -19,6 +19,8 @@
     --white-70p: rgba(255, 255, 255, 0.7);
     --white-40p: rgba(255, 255, 255, 0.4);
     --white-2p: rgba(255, 255, 255, 0.02);
+    --text-positive: #AFF4C6;
+    --text-danger: #FCB3AD;
 }
 
 
@@ -91,7 +93,7 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
-    padding: 16px 48px;
+    padding: 16px 0;
     border-bottom: 0.5px solid var(--border-primary);
 
     .logo-wrapper {
@@ -147,7 +149,6 @@ body {
             color: var(--white-40p);
         }
 
-
         .search-button {
             background: transparent;
             border: none;
@@ -164,7 +165,6 @@ body {
             height: 100%;
             border-top-right-radius: 9999px;
             border-bottom-right-radius: 9999px;
-
         }
     }
 
@@ -182,7 +182,149 @@ body {
     }
 }
 
+@media (max-width:1420px) {
+    .navbar {
+        padding: 16px;
+    }
+}
 
+@media (max-width: 1200px) {
+    .large-screen-nav {
+        display: none;
+    }
+}
+
+@media (max-width:1240px) {
+    .nav-items-wrapper {
+        gap: 16px !important;
+    }
+}
+
+/* small screen nav start here */
+.small-nav {
+    width: 100%;
+    height: 64px;
+}
+
+.sm-nav-main {
+    width: 100%;
+    height: 100%;
+    padding: 0px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 0.5px solid #2f303e;
+}
+
+.sm-logo-part {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.portfolio-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+}
+
+.search-and-berger {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.berger-button {
+    background-color: transparent;
+    border: none;
+}
+
+/* menu small screen */
+/* Sidebar Overlay */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Sidebar Menu */
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: -80%;
+    width: 80%;
+    height: 100%;
+    background: #1e1f2a;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease-in-out;
+    padding: 20px;
+    z-index: 999;
+}
+
+/* Close Button */
+.close-btn {
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+/* Sidebar Active */
+.sidebar-menu.active {
+    left: 0;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Sidebar Items */
+.sidebar-menu ul {
+    list-style: none;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sidebar-menu ul li {
+    padding: 10px 15px;
+    color: white;
+    cursor: pointer;
+}
+
+.sidebar-menu ul li:hover {
+    border: 1px solid #ddd;
+}
+
+.account-sm-menu {
+    width: 100%;
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 8px;
+    gap: 8px;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.account-sm-menu p {
+    color: white;
+}
+
+@media (min-width: 1201px) {
+    .small-screen-nav {
+        display: none;
+    }
+}
 
 /* Navbar CSS ends here */
 
@@ -231,6 +373,10 @@ body {
         gap: 4px;
         padding-right: 50px;
 
+        .multi-wallet-mobile {
+            display: none;
+        }
+
         .balance {
             font-size: 48px;
             line-height: 1.2em;
@@ -242,10 +388,43 @@ body {
             font-size: 16px;
             color: var(--white-40p);
 
-            .percetage-change {
+            .percentage-change {
                 color: var(--text-primary);
             }
         }
+    }
+}
+
+
+@media (max-width:1420px) {
+    section:not(.table-section) {
+        padding: 0 12px;
+    }
+
+    .table-section {
+        tr {
+            padding-left: 12px !important;
+            padding-right: 12px !important;
+        }
+    }
+
+    .multi-wallet-mobile {
+        display: inline-block !important;
+        font-size: 14px;
+        line-height: 1.4em;
+        color: var(--text-neutral-tertiary);
+    }
+
+    .avatar-username {
+        display: none !important;
+    }
+
+    .balance {
+        font-size: 20px;
+    }
+
+    .balance-changes {
+        padding: 0 !important;
     }
 }
 
@@ -293,6 +472,20 @@ body {
                 margin-right: 8px;
             }
         }
+
+        .refresh-button {
+            height: 40px;
+            aspect-ratio: 1;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-secondary);
+            border-radius: 10px;
+            border: 1px solid var(--border-secondary);
+            font-size: 16px;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
     }
 
     .table-search {
@@ -337,6 +530,30 @@ body {
     }
 }
 
+@media (max-width:692px) {
+    .table-controls-content-wrapper {
+        /* flex-direction: column; */
+        gap: 8px;
+    }
+
+    .controls {
+        gap: 8px !important;
+    }
+
+    .control-button {
+        height: 40px !important;
+        padding: 6px 8px !important;
+    }
+
+    .control-button:nth-child(n+2):nth-last-child(n+2) {
+        display: none !important;
+    }
+
+    .refresh-button {
+        display: flex !important;
+    }
+
+}
 
 /* Portfolio Table Controls CSS ends here */
 
@@ -1046,5 +1263,166 @@ body {
 
 
 /* Share Modal */
+
+
+/* History Modal */
+
+
+.history-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+
+    .modal {
+        background: var(--bg-secondary);
+        border-radius: 16px;
+        padding: 24px 32px;
+        width: 100%;
+        max-width: 834px;
+        color: var(--text-primary);
+        max-height: 692px;
+    }
+
+    .close-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        aspect-ratio: 1;
+        background: transparent;
+        border: 1px solid var(--border-secondary);
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        margin-bottom: 32px;
+        gap: 16px;
+    }
+
+    .token-info {
+        display: flex;
+        text-align: start;
+        gap: 16px;
+    }
+
+    .token-icon {
+        width: 100px;
+        aspect-ratio: 1;
+        border-radius: 9999px;
+        object-fit: cover;
+    }
+
+    .token-name {
+        color: var(--text-primary);
+        font-size: 16px;
+        line-height: 1.4em;
+    }
+
+    .token-amount {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 1.2em;
+        margin-bottom: 4px;
+
+    }
+
+    .token-change {
+        color: var(--white-40p);
+    }
+
+    .percentage-change {
+        color: white;
+    }
+
+    .table-wrapper {
+        max-height: 500px;
+        overflow: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .table-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    thead {
+        border-bottom: 0.5px solid var(--border-primary);
+    }
+
+    th,
+    td {
+        text-align: left;
+    }
+
+    th {
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.4em;
+        color: var(--white-70p);
+
+
+    }
+
+    tr {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 40px;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 8px 0;
+        border: none;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: rgba(255, 255, 255, 0.02);
+    }
+
+    tbody tr:nth-child(odd) {
+        background-color: transparent;
+    }
+
+    .buy {
+        td {
+
+            color: var(--text-positive);
+        }
+    }
+
+    .sell {
+        td {
+
+            color: var(--text-danger);
+        }
+    }
+
+    .icon {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .modal-overlay.active {
+        display: flex;
+    }
+}
+
+/* History Modal */
 
 /* Modals */

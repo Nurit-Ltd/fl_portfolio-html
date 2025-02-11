@@ -9,7 +9,7 @@
   <body>
     <!-- Navbar starts here -->
 
-    <nav class="navbar">
+    <nav class="navbar large-screen-nav">
       <div class="nav-items-wrapper">
         <figure class="logo-wrapper">
           <img class="logo" src="./public/images/fl-logo.svg" alt="FL-Logo" />
@@ -43,6 +43,51 @@
       </div>
     </nav>
 
+    <!-- small screen nav  -->
+    <nav class="small-nav small-screen-nav">
+      <div class="sm-nav-main">
+        <div class="sm-logo-part">
+          <a href="#">
+            <img src="./public/images/logo-sm.svg" alt="sm-logo" />
+          </a>
+          <h4 class="portfolio-text">Portfolio</h4>
+        </div>
+        <div class="search-and-berger">
+          <a href="#">
+            <img src="./public/images/search-sm.svg" alt="sm-logo" />
+          </a>
+          <button class="berger-button">
+            <img src="./public/images/menu-sm.svg" alt="menu-logo" />
+          </button>
+
+          <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+          <div class="sidebar-menu" id="sidebarMenu">
+            <div class="close-div close-btn" id="closeMenu">
+              <img
+                src="./public/images/cross-icon.svg"
+                alt="close-icon"
+                class="clo-img-sm"
+              />
+            </div>
+
+            <ul>
+              <li><a href="#">New Tokens</a></li>
+              <li><a href="#">Trending</a></li>
+              <li><a href="#">Portfolio</a></li>
+              <li><a href="#">Referral</a></li>
+              <li><a href="#">Leaderboard</a></li>
+              <li><a href="#">Launch Token</a></li>
+            </ul>
+            <a href="#" class="account-sm-menu">
+              <img src="./public/images/user-icon.svg" alt="User-icon" />
+              <p>Account</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
     <!-- Navbar ends here -->
 
     <main>
@@ -65,9 +110,10 @@
               </div>
             </div>
             <div class="balance-changes">
+              <p class="multi-wallet-mobile">Multi-Wallet (4)</p>
               <h2 class="balance">00,000 XRP</h2>
               <p class="changes">
-                <span class="percetage-change">+00,0%</span> 24H Change
+                <span class="percentage-change">+00,0%</span> 24H Change
               </p>
             </div>
           </div>
@@ -113,6 +159,13 @@
                 />
                 Refresh PnL
               </button>
+              <button class="refresh-button">
+                <img
+                  class="refresh-button-icon"
+                  src="./public/images/refresh-icon.svg"
+                  alt="refresh-icon"
+                />
+              </button>
             </div>
             <div class="table-search">
               <input
@@ -120,7 +173,7 @@
                 type="text"
                 placeholder="Search Inside Portfolio"
               />
-              <button type="submit" class="search-button">
+              <button type="submit" id="tableSearch" class="search-button">
                 <img src="./public/images/search-icon.svg" alt="Search-icon" />
               </button>
             </div>
@@ -802,7 +855,7 @@
                 <div class="token-name">TOKEN</div>
                 <div class="token-amount">00,000 XRP</div>
                 <div class="token-change">
-                  <span class="percetage-change">+00,0%</span> 24H Change
+                  <span class="percentage-change">+00,0%</span> 24H Change
                 </div>
               </div>
             </div>
@@ -907,7 +960,7 @@
             <div class="modal-share-heading">
               <div class="space-div"></div>
               <h3 class="share-title">SHARE YOUR PnL CARD</h3>
-              <div class="close-div close-btn">
+              <div class="close-div close-share-modal">
                 <img
                   src="./public/images/cross-icon.svg"
                   alt="close-icon"
@@ -942,6 +995,161 @@
         </div>
 
         <!-- Share Modal -->
+
+        <!-- History Modal -->
+
+        <div class="history-modal-overlay">
+          <div class="modal">
+            <div class="modal-header">
+              <div class="token-info">
+                <figure>
+                  <img
+                    class="token-icon"
+                    src="./public/images/avatar-icon.svg"
+                  />
+                </figure>
+                <div class="token-details">
+                  <div class="token-name">TOKEN</div>
+                  <div class="token-amount">00,000 XRP</div>
+                  <div class="token-change">
+                    <span class="percentage-change">+00,0%</span> 24H Change
+                  </div>
+                </div>
+              </div>
+              <button class="close-button">
+                <img src="./public/images/cross-icon.svg" alt="Close-icon" />
+              </button>
+            </div>
+
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>TYPE</th>
+                    <th>PRICE</th>
+                    <th>BUY</th>
+                    <th>SELL</th>
+                    <th>WALLET</th>
+                    <th>TIME</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="buy">
+                    <td>Buy</td>
+                    <td>0 XRP</td>
+                    <td>0 TOKEN</td>
+                    <td>0 XRP</td>
+                    <td>Wallet 1</td>
+                    <td>Feb 4 02:31:12</td>
+                    <td><a href="#" class="icon">🔗</a></td>
+                  </tr>
+                  <tr class="buy">
+                    <td>Buy</td>
+                    <td>0 XRP</td>
+                    <td>0 TOKEN</td>
+                    <td>0 XRP</td>
+                    <td>Wallet 1</td>
+                    <td>Feb 4 02:31:12</td>
+                    <td><a href="#" class="icon">🔗</a></td>
+                  </tr>
+                  <tr class="sell">
+                    <td>Sell</td>
+                    <td>0 XRP</td>
+                    <td>0 XRP</td>
+                    <td>0 TOKEN</td>
+                    <td>Wallet 1</td>
+                    <td>Feb 4 02:31:12</td>
+                    <td><a href="#" class="icon">🔗</a></td>
+                  </tr>
+                  <tr class="sell">
+                    <td>Sell</td>
+                    <td>0 XRP</td>
+                    <td>0 XRP</td>
+                    <td>0 TOKEN</td>
+                    <td>Wallet 1</td>
+                    <td>Feb 4 02:31:12</td>
+                    <td><a href="#" class="icon">🔗</a></td>
+                  </tr>
+                  <tr class="sell">
+                    <td>Sell</td>
+                    <td>0 XRP</td>
+                    <td>0 XRP</td>
+                    <td>0 TOKEN</td>
+                    <td>Wallet 1</td>
+                    <td>Feb 4 02:31:12</td>
+                    <td><a href="#" class="icon">🔗</a></td>
+                  </tr>
+                  <tr class="buy">
+                    <td>Buy</td>
+                    <td>0 XRP</td>
+                    <td>0 TOKEN</td>
+                    <td>0 XRP</td>
+                    <td>Wallet 1</td>
+                    <td>Feb 4 02:31:12</td>
+                    <td><a href="#" class="icon">🔗</a></td>
+                  </tr>
+                  <tr class="buy">
+                    <td>Buy</td>
+                    <td>0 XRP</td>
+                    <td>0 TOKEN</td>
+                    <td>0 XRP</td>
+                    <td>Wallet 1</td>
+                    <td>Feb 4 02:31:12</td>
+                    <td><a href="#" class="icon">🔗</a></td>
+                  </tr>
+                  <tr class="buy">
+                    <td>Buy</td>
+                    <td>0 XRP</td>
+                    <td>0 TOKEN</td>
+                    <td>0 XRP</td>
+                    <td>Wallet 1</td>
+                    <td>Feb 4 02:31:12</td>
+                    <td><a href="#" class="icon">🔗</a></td>
+                  </tr>
+                  <tr class="buy">
+                    <td>Buy</td>
+                    <td>0 XRP</td>
+                    <td>0 TOKEN</td>
+                    <td>0 XRP</td>
+                    <td>Wallet 1</td>
+                    <td>Feb 4 02:31:12</td>
+                    <td><a href="#" class="icon">🔗</a></td>
+                  </tr>
+                  <tr class="buy">
+                    <td>Buy</td>
+                    <td>0 XRP</td>
+                    <td>0 TOKEN</td>
+                    <td>0 XRP</td>
+                    <td>Wallet 1</td>
+                    <td>Feb 4 02:31:12</td>
+                    <td><a href="#" class="icon">🔗</a></td>
+                  </tr>
+                  <tr class="buy">
+                    <td>Buy</td>
+                    <td>0 XRP</td>
+                    <td>0 TOKEN</td>
+                    <td>0 XRP</td>
+                    <td>Wallet 1</td>
+                    <td>Feb 4 02:31:12</td>
+                    <td><a href="#" class="icon">🔗</a></td>
+                  </tr>
+                  <tr class="buy">
+                    <td>Buy</td>
+                    <td>0 XRP</td>
+                    <td>0 TOKEN</td>
+                    <td>0 XRP</td>
+                    <td>Wallet 1</td>
+                    <td>Feb 4 02:31:12</td>
+                    <td><a href="#" class="icon">🔗</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- History Modal -->
 
         <!-- Modals -->
       </section>

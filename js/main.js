@@ -12,6 +12,34 @@ Array.from(multiWallet).forEach((wallet) => {
   });
 });
 
+// NavBar
+
+document.addEventListener("DOMContentLoaded", function () {
+  const menuButton = document.querySelector(".berger-button");
+  const sidebarMenu = document.getElementById("sidebarMenu");
+  const closeMenu = document.getElementById("closeMenu");
+  const overlay = document.getElementById("sidebarOverlay");
+
+  // Function to open menu
+  function openMenu() {
+    sidebarMenu.classList.add("active");
+    overlay.classList.add("active");
+  }
+
+  // Function to close menu
+  function closeSidebar() {
+    sidebarMenu.classList.remove("active");
+    overlay.classList.remove("active");
+  }
+
+  // Event Listeners
+  menuButton.addEventListener("click", openMenu);
+  closeMenu.addEventListener("click", closeSidebar);
+  overlay.addEventListener("click", closeSidebar);
+});
+
+// NavBar
+
 // Action menu
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -127,18 +155,49 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-const closeModalBtn = document.querySelector(".close-btn");
-
-closeModalBtn.addEventListener("click", () => {
-  modal.style.display = "none";
-});
-
 window.addEventListener("click", (e) => {
   if (e.target === modal) {
     modal.style.display = "none";
   }
 });
 
+// Close share modal when clicking the close button
+document.querySelectorAll(".close-share-modal").forEach((closeModalBtn) => {
+  closeModalBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
+  });
+});
+
 // Share Modal
+
+// History Modal
+
+const historyModal = document.querySelector(".history-modal-overlay");
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".tx-history-button").forEach((openModalButton) => {
+    openModalButton.addEventListener("click", () => {
+      historyModal.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    });
+  });
+});
+
+document.querySelectorAll(".close-button").forEach((closeModalBtn) => {
+  closeModalBtn.addEventListener("click", () => {
+    historyModal.style.display = "none";
+    document.body.style.overflow = "auto";
+  });
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target === historyModal) {
+    historyModal.style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+});
+
+// History Modal
 
 // Modals
