@@ -573,3 +573,478 @@ body {
 }
 
 /* Table section CSS ends here */
+
+
+
+/* Modals */
+
+/* Trade Modal */
+.trade-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    .modal {
+        background: var(--bg-secondary);
+        border-radius: 16px;
+        padding: 24px 32px;
+        width: 100%;
+        max-width: 617px;
+        color: var(--text-primary);
+    }
+
+    .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+        gap: 16px;
+    }
+
+    .wallet-drop-down-wrapper {
+        width: 100%;
+    }
+
+    .wallet-select {
+        display: flex;
+        border-radius: 10px;
+        border: 1px solid var(--border-secondary);
+        padding-left: 16px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .wallet-select::after {
+        content: url(../public/images/chevron-down-icon.svg);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 12px;
+        color: var(--text-primary);
+        right: 12px;
+        pointer-events: none;
+    }
+
+    .wallet-icon {
+        width: 20px;
+        height: auto;
+    }
+
+    .wallet-options {
+        width: 100%;
+        height: 100%;
+        padding: 12px;
+        color: var(--text-primary);
+        appearance: none;
+        border: none;
+        -webkit-appearance: none;
+        font-size: 14px;
+        cursor: pointer;
+        outline: none;
+        background: var(--bg-secondary);
+    }
+
+    select option {
+        background-color: var(--bg-secondary);
+        color: white;
+    }
+
+    .close-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        aspect-ratio: 1;
+        background: transparent;
+        border: 1px solid var(--border-secondary);
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .token-info {
+        display: flex;
+        text-align: start;
+        gap: 16px;
+        margin-bottom: 32px;
+    }
+
+    .token-icon {
+        width: 100px;
+        aspect-ratio: 1;
+        border-radius: 9999px;
+        object-fit: cover;
+    }
+
+    .token-name {
+        color: var(--text-primary);
+        font-size: 16px;
+        line-height: 1.4em;
+    }
+
+    .token-amount {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 1.2em;
+        margin-bottom: 4px;
+
+    }
+
+    .token-change {
+        color: var(--white-40p);
+    }
+
+    .percentage-change {
+        color: white;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-bottom: 32px;
+    }
+
+    .stat-box {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 8px;
+        border-radius: 10px;
+    }
+
+    .stat-label {
+        color: var(--white-70p);
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.15em;
+    }
+
+    .stat-xrp {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.15em;
+        color: var(--text-primary);
+        margin: 4px 0;
+    }
+
+    .stat-token {
+        color: var(--text-secondary);
+        font-size: 14px;
+    }
+
+    .action-buttons {
+        display: flex;
+        gap: 0;
+        margin-bottom: 16px;
+        border-radius: 9999px;
+        border: 0.5px solid var(--border-primary);
+    }
+
+    .action-button {
+        flex: 1;
+        padding: 12px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 9999px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.15em;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .buy-active {
+        background: #008043;
+        color: var(--text-primary);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    .sell-active {
+        background: #ef4444;
+        color: white;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    .button-inactive {
+        background: transparent;
+        color: white;
+    }
+
+    .presets {
+        margin-bottom: 16px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .preset-label {
+        color: var(--text-primary);
+        font-size: 16px;
+        line-height: 1.4em;
+        margin-bottom: 16px;
+    }
+
+    .preset-buttons {
+        display: flex;
+        gap: 6px;
+    }
+
+    .preset-button {
+        padding: 6px 8px;
+        background: transparent;
+        border: none;
+        color: var(--text-secondary);
+        cursor: pointer;
+    }
+
+    .amount-input-container {
+        margin-bottom: 16px;
+    }
+
+    .amount-input {
+        width: 100%;
+        background: var(--bg-primary);
+        border: 1px solid var(--border-primary);
+        border-radius: 10px;
+        padding: 12px 16px;
+        color: var(--text-primary);
+        margin-bottom: 16px;
+        font-size: 16px;
+        line-height: 1.15em;
+        outline: none;
+    }
+
+    .amount-input::placeholder {
+        color: var(--white-40p);
+    }
+
+    .amount-details {
+        display: flex;
+        justify-content: space-between;
+        color: var(--text-primary);
+        font-size: 14px;
+    }
+
+    .price-impact-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .quick-action-button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 10px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.15em;
+        color: var(--text-primary);
+        cursor: pointer;
+        margin-bottom: 16px;
+    }
+
+    .advanced-settings {
+        text-align: left;
+        background: none;
+        border: none;
+        color: var(--text-primary);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+}
+
+.trade-modal-overlay.active {
+    display: flex;
+}
+
+/* Trade Modal */
+
+
+
+/* Share Modal */
+
+.share-your-pnl {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-share-content {
+    width: 624px;
+    background-color: #1e1f2a;
+    padding: 24px 32px;
+    border-radius: 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+@media (max-width: 640px) {
+    .modal-share-content {
+        width: 310px;
+        padding: 12px 12px;
+        gap: 12px;
+    }
+}
+
+.modal-share-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.space-div {
+    width: 40px;
+    height: 40px;
+}
+
+@media (max-width: 640px) {
+    .space-div {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.share-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+@media (max-width: 640px) {
+    .share-title {
+        font-size: 16px;
+    }
+}
+
+.close-div {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #3e4051;
+    background-color: #1e1f2a;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+@media (max-width: 640px) {
+    .close-div {
+        width: 20px;
+        height: 20px;
+    }
+
+    .clo-img-sm {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+.tweet-and-download {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+
+@media (max-width: 640px) {
+    .tweet-and-download {
+        gap: 20px;
+    }
+
+    .tweet-img-sm {
+        width: 22px;
+        height: 22px;
+    }
+
+    .download-img-sm {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+.tweet-download-button {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 6px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.tweet-icon-div {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #6f93fe;
+    background-color: #456eeb;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 640px) {
+    .tweet-icon-div {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+    }
+}
+
+.download-icon-div {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #2f303e;
+    background-color: #1e1f2a;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 640px) {
+    .download-icon-div {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+    }
+}
+
+.tweet-text {
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+}
+
+@media (max-width: 640px) {
+    .tweet-text {
+        font-size: 12px;
+        font-weight: 400;
+        color: white;
+    }
+}
+
+
+
+/* Share Modal */
+
+/* Modals */

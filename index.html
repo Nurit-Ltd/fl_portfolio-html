@@ -766,6 +766,184 @@
             </tbody>
           </table>
         </div>
+
+        <!-- Modals -->
+
+        <!-- Trade Modal -->
+
+        <div class="trade-modal-overlay" id="tradeModalOverlay">
+          <div class="modal">
+            <div class="modal-header">
+              <div class="wallet-drop-down-wrapper">
+                <div class="wallet-select">
+                  <img
+                    src="./public/images/wallet-icon.svg"
+                    alt="Wallet Icon"
+                    class="wallet-icon"
+                  />
+                  <select class="wallet-options">
+                    <option>Wallet 1</option>
+                    <option>Wallet 2</option>
+                    <option>Wallet 3</option>
+                    <option>Wallet 4</option>
+                  </select>
+                </div>
+              </div>
+              <button class="close-button" onclick="closeModal()">
+                <img src="./public/images/cross-icon.svg" alt="Close-icon" />
+              </button>
+            </div>
+
+            <div class="token-info">
+              <figure>
+                <img class="token-icon" src="./public/images/avatar-icon.svg" />
+              </figure>
+              <div class="token-details">
+                <div class="token-name">TOKEN</div>
+                <div class="token-amount">00,000 XRP</div>
+                <div class="token-change">
+                  <span class="percetage-change">+00,0%</span> 24H Change
+                </div>
+              </div>
+            </div>
+
+            <div class="stats-grid">
+              <div class="stat-box">
+                <div class="stat-label">BOUGHT</div>
+                <div class="stat-xrp">0 XRP</div>
+                <div class="stat-token">0 TOKEN</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-label">SOLD</div>
+                <div class="stat-xrp">0 XRP</div>
+                <div class="stat-token">0 TOKEN</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-label">REMAINING</div>
+                <div class="stat-xrp">0 XRP</div>
+                <div class="stat-token">0 TOKEN</div>
+              </div>
+            </div>
+
+            <div class="action-buttons">
+              <button
+                class="action-button buy-active"
+                onclick="setMode('buy')"
+                id="buyButton"
+              >
+                Buy
+              </button>
+              <button
+                class="action-button button-inactive"
+                onclick="setMode('sell')"
+                id="sellButton"
+              >
+                Sell
+              </button>
+            </div>
+
+            <div class="presets">
+              <div class="preset-label">Presets</div>
+              <div class="preset-buttons">
+                <button class="preset-button" onclick="setAmount(10)">
+                  10 XRP
+                </button>
+                <button class="preset-button" onclick="setAmount(20)">
+                  20 XRP
+                </button>
+                <button class="preset-button" onclick="setAmount(50)">
+                  50 XRP
+                </button>
+                <button class="preset-button" onclick="setAmount(100)">
+                  100 XRP
+                </button>
+              </div>
+            </div>
+
+            <div class="amount-input-container">
+              <input
+                type="text"
+                class="amount-input"
+                placeholder="Amount to Buy (XRP)"
+                id="amountInput"
+              />
+              <div class="amount-details">
+                <div>=0 TOKEN</div>
+                <div class="price-impact-wrapper">
+                  Price Impact
+                  <img src="./public/images/Info-icon.svg" alt="info-icon" /> ≈
+                  <span class="price-impact">6%</span>
+                </div>
+              </div>
+            </div>
+
+            <button
+              class="quick-action-button buy-active"
+              id="quickActionButton"
+            >
+              QUICK BUY
+            </button>
+
+            <button class="advanced-settings">
+              <img
+                src="./public/images/settings-icon.svg"
+                alt="Settings-icon"
+              />
+              Advanced Settings
+              <img
+                src="./public/images/chevron-down-icon.svg"
+                alt="arrow-down-icon"
+              />
+            </button>
+          </div>
+        </div>
+
+        <!-- Trade Modal -->
+
+        <!-- Share Modal -->
+
+        <div id="modal-share" class="share-your-pnl">
+          <div class="modal-share-content">
+            <div class="modal-share-heading">
+              <div class="space-div"></div>
+              <h3 class="share-title">SHARE YOUR PnL CARD</h3>
+              <div class="close-div close-btn">
+                <img
+                  src="./public/images/cross-icon.svg"
+                  alt="close-icon"
+                  class="clo-img-sm"
+                />
+              </div>
+            </div>
+            <img src="./public/images/pnl-share-modal.svg" alt="share-des" />
+            <div class="tweet-and-download">
+              <button class="tweet-download-button">
+                <div class="tweet-icon-div">
+                  <img
+                    src="./public/images/twitter-icon.svg"
+                    alt="tweet-icon"
+                    class="tweet-img-sm"
+                  />
+                </div>
+                <span class="tweet-text">Tweet</span>
+              </button>
+              <button class="tweet-download-button">
+                <div class="download-icon-div">
+                  <img
+                    src="./public/images/download-icon.svg"
+                    alt="download-icon"
+                    class="download-img-sm"
+                  />
+                </div>
+                <span class="tweet-text">Download</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Share Modal -->
+
+        <!-- Modals -->
       </section>
       <!-- Tables section ends here -->
     </main>
