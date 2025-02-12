@@ -1,3 +1,5 @@
+// Table Multiple wallet Open Close
+
 let multiWallet = document.getElementsByClassName("multi-wallet");
 function toggleContent(element) {
   const subContent = element.closest(".row-content").nextElementSibling;
@@ -40,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // NavBar
 
-// Action menu
+// Table Action menu
 
 document.addEventListener("DOMContentLoaded", function () {
   const actionMenu = document.createElement("div");

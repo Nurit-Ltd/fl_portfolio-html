@@ -21,6 +21,10 @@
     --white-2p: rgba(255, 255, 255, 0.02);
     --text-positive: #AFF4C6;
     --text-danger: #FCB3AD;
+    --bg-positive: #008043;
+    --bg-danger: #F03330;
+    --border-positive: #14AE5C;
+    --border-danger: #FF7D6F;
 }
 
 
@@ -65,7 +69,8 @@ figure {
 }
 
 body {
-    height: 100dvh;
+    height: 100vh;
+    overflow: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -213,7 +218,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 0.5px solid #2f303e;
+    border-bottom: 0.5px solid var(--border-primary);
 }
 
 .sm-logo-part {
@@ -225,7 +230,8 @@ body {
 .portfolio-text {
     font-size: 14px;
     font-weight: 600;
-    color: white;
+    color: var(--text-primary);
+
 }
 
 .search-and-berger {
@@ -237,9 +243,11 @@ body {
 .berger-button {
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 
 /* menu small screen */
+
 /* Sidebar Overlay */
 .sidebar-overlay {
     position: fixed;
@@ -260,7 +268,7 @@ body {
     left: -80%;
     width: 80%;
     height: 100%;
-    background: #1e1f2a;
+    background: var(--bg-secondary);
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
     transition: left 0.3s ease-in-out;
     padding: 20px;
@@ -296,12 +304,14 @@ body {
 
 .sidebar-menu ul li {
     padding: 10px 15px;
-    color: white;
+    color: var(--text-primary);
     cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
 }
 
 .sidebar-menu ul li:hover {
-    border: 1px solid #ddd;
+    border: 1px solid var(--white-70p);
 }
 
 .account-sm-menu {
@@ -309,7 +319,7 @@ body {
     margin-top: 24px;
     display: flex;
     align-items: center;
-    border: 1px solid #ddd;
+    border: 1px solid var(--white-70p);
     padding: 8px;
     gap: 8px;
     justify-content: center;
@@ -317,7 +327,7 @@ body {
 }
 
 .account-sm-menu p {
-    color: white;
+    color: var(--text-primary);
 }
 
 @media (min-width: 1201px) {
@@ -395,6 +405,13 @@ body {
     }
 }
 
+@media (max-width:1200px) {
+    .portfolio-header-content-wrapper {
+        padding: 16px 0;
+    }
+
+}
+
 
 @media (max-width:1420px) {
     section:not(.table-section) {
@@ -408,6 +425,17 @@ body {
         }
     }
 
+
+    .balance {
+        font-size: 20px;
+    }
+
+    .balance-changes {
+        padding: 0 !important;
+    }
+}
+
+@media (max-width:1200px) {
     .multi-wallet-mobile {
         display: inline-block !important;
         font-size: 14px;
@@ -417,14 +445,6 @@ body {
 
     .avatar-username {
         display: none !important;
-    }
-
-    .balance {
-        font-size: 20px;
-    }
-
-    .balance-changes {
-        padding: 0 !important;
     }
 }
 
@@ -564,7 +584,27 @@ body {
 
 
 .table-section {
+    height: calc(100vh - 340px);
+    overflow-y: auto;
 
+    .table-scroll {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .table-scroll::-webkit-scrollbar {
+        display: none;
+    }
+
+    .table-scroll table {
+        min-width: 900px;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .table-content-wrapper {
+        overflow-x: auto !important;
+    }
 
     table {
         width: 100%;
@@ -618,7 +658,6 @@ body {
         padding: 7px calc((100% - 1420px) / 2);
         display: grid;
         grid-template-columns: 1fr 6fr;
-        background: silver;
 
         td {
             .action-cell {
@@ -789,6 +828,20 @@ body {
     }
 }
 
+@media (max-width: 768px) {
+    .table-scroll {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .table-scroll {
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+}
+
 /* Table section CSS ends here */
 
 
@@ -866,7 +919,7 @@ body {
 
     select option {
         background-color: var(--bg-secondary);
-        color: white;
+        color: var(--text-primary);
     }
 
     .close-button {
@@ -910,11 +963,12 @@ body {
     }
 
     .token-change {
+        font-size: 16px;
         color: var(--white-40p);
     }
 
     .percentage-change {
-        color: white;
+        color: var(--text-primary);
     }
 
     .stats-grid {
@@ -975,20 +1029,20 @@ body {
     }
 
     .buy-active {
-        background: #008043;
+        background: var(--bg-positive);
         color: var(--text-primary);
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     }
 
     .sell-active {
-        background: #ef4444;
-        color: white;
+        background: var(--bg-danger);
+        color: var(--text-primary);
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     }
 
     .button-inactive {
         background: transparent;
-        color: white;
+        color: var(--text-primary);
     }
 
     .presets {
@@ -1064,6 +1118,14 @@ body {
         margin-bottom: 16px;
     }
 
+    .quick-action-button.buy-active {
+        border: 1px solid var(--border-positive);
+    }
+
+    .quick-action-button.sell-active {
+        border: 1px solid var(--border-danger);
+    }
+
     .advanced-settings {
         text-align: left;
         background: none;
@@ -1079,6 +1141,100 @@ body {
 .trade-modal-overlay.active {
     display: flex;
 }
+
+@media (max-width:692px) {
+    .trade-modal-overlay {
+        padding: 16px;
+
+        .modal {
+            padding: 24px;
+            width: 100%;
+            max-width: 402px;
+        }
+
+        .modal-header {
+            margin-bottom: 16px;
+            gap: 6px;
+        }
+
+        .wallet-select {
+            padding-left: 8px;
+        }
+
+        .token-info {
+            display: flex;
+            text-align: start;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .token-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .token-name {
+            font-size: 14px;
+            line-height: 1.4em;
+        }
+
+        .token-amount {
+            font-size: 20px;
+            line-height: 1.15em;
+            margin-bottom: 4px;
+
+        }
+
+        .token-change {
+            font-size: 14px;
+        }
+
+
+
+        .stats-grid {
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+
+        .action-buttons {
+            margin-bottom: 12px;
+        }
+
+
+
+        .presets {
+            margin-bottom: 12px;
+        }
+
+        .preset-label {
+            margin-bottom: 12px;
+        }
+
+        .preset-buttons {
+            display: flex;
+            gap: 2px;
+        }
+
+        .amount-input-container {
+            margin-bottom: 12px;
+        }
+
+        .amount-input {
+            margin-bottom: 12px;
+        }
+
+
+
+
+        .quick-action-button {
+            margin-bottom: 12px;
+        }
+
+
+    }
+}
+
 
 /* Trade Modal */
 
@@ -1102,7 +1258,7 @@ body {
 
 .modal-share-content {
     width: 624px;
-    background-color: #1e1f2a;
+    background-color: var(--bg-secondary);
     padding: 24px 32px;
     border-radius: 16px;
     text-align: center;
@@ -1140,7 +1296,7 @@ body {
 .share-title {
     font-size: 24px;
     font-weight: 600;
-    color: white;
+    color: var(--text-primary);
     text-transform: uppercase;
     text-align: center;
 }
@@ -1154,8 +1310,8 @@ body {
 .close-div {
     width: 40px;
     height: 40px;
-    border: 1px solid #3e4051;
-    background-color: #1e1f2a;
+    border: 1px solid var(--border-secondary);
+    background-color: var(--bg-secondary);
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -1167,6 +1323,7 @@ body {
     .close-div {
         width: 20px;
         height: 20px;
+        border-radius: 6px;
     }
 
     .clo-img-sm {
@@ -1230,8 +1387,8 @@ body {
 .download-icon-div {
     width: 60px;
     height: 60px;
-    border: 1px solid #2f303e;
-    background-color: #1e1f2a;
+    border: 1px solid var(--border-primary);
+    background-color: var(--bg-secondary);
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -1249,14 +1406,14 @@ body {
 .tweet-text {
     font-size: 16px;
     font-weight: 400;
-    color: white;
+    color: var(--text-primary);
 }
 
 @media (max-width: 640px) {
     .tweet-text {
         font-size: 12px;
         font-weight: 400;
-        color: white;
+        color: var(--text-primary);
     }
 }
 
@@ -1342,7 +1499,7 @@ body {
     }
 
     .percentage-change {
-        color: white;
+        color: var(--text-primary);
     }
 
     .table-wrapper {
@@ -1357,7 +1514,6 @@ body {
     }
 
     table {
-        width: 100%;
         border-collapse: collapse;
         margin-top: 10px;
     }
@@ -1369,6 +1525,7 @@ body {
     th,
     td {
         text-align: left;
+        white-space: nowrap;
     }
 
     th {
@@ -1388,6 +1545,7 @@ body {
         font-weight: 400;
         padding: 8px 0;
         border: none;
+        column-gap: 12px;
     }
 
     tbody tr:nth-child(even) {
@@ -1413,7 +1571,7 @@ body {
     }
 
     .icon {
-        color: white;
+        color: var(--text-primary);
         text-decoration: none;
         font-size: 14px;
     }
@@ -1421,7 +1579,124 @@ body {
     .modal-overlay.active {
         display: flex;
     }
+
+
+    .modal-table-scroll {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .modal-table-scroll::-webkit-scrollbar {
+        display: none;
+    }
+
+    .modal-table-scroll table {
+        width: 100%;
+        border-collapse: collapse;
+    }
 }
+
+
+@media (max-width:900px) {
+    .history-modal-overlay {
+        padding: 16px;
+
+
+        .modal {
+            padding: 24px;
+            max-width: 90vw;
+            max-height: 90vh;
+            overflow: hidden;
+        }
+
+
+        .modal-header {
+            margin-bottom: 8px;
+        }
+
+
+        .token-info {
+            gap: 8px;
+        }
+
+
+        .token-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .token-name {
+            font-size: 14px;
+            line-height: 1.4em;
+        }
+
+        .token-amount {
+            font-size: 20px;
+            line-height: 1.2em;
+            margin-bottom: 4px;
+
+        }
+
+        .token-change {
+            font-size: 14px;
+        }
+
+
+        .table-wrapper {
+            max-height: calc(90vh - 225px);
+            max-width: calc(90vw);
+            overflow: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .table-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+
+        thead,
+        tr {
+            width: 100dvw;
+        }
+
+
+        .modal-table-scroll {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .modal-table-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .modal-table-scroll table {
+            width: 100%;
+        }
+    }
+
+}
+
+
+
+
+@media (max-width: 768px) {
+    .modal-table-scroll {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .modal-table-scroll {
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+}
+
+
+
+
 
 /* History Modal */
 
