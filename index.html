@@ -5,1631 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FL - Portfolio</title>
- 
-  <style>
-    /* Font */
-
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-
-/* Root Variables */
-:root {
-  --fontInter: "Inter", serif;
-  --bg-primary: #17171f;
-  --bg-secondary: #1e1f2a;
-  --text-primary: #ffffff;
-  --text-secondary: #d0deff;
-  --text-neutral: #f3f3f3;
-  --text-neutral-tertiary: #cdcdcd;
-  --border-primary: #2f303e;
-  --border-secondary: #3e4051;
-  --color-darkSky: #6f93fe;
-  --white-70p: rgba(255, 255, 255, 0.7);
-  --white-40p: rgba(255, 255, 255, 0.4);
-  --white-2p: rgba(255, 255, 255, 0.02);
-  --text-positive: #aff4c6;
-  --text-danger: #fcb3ad;
-  --bg-positive: #008043;
-  --bg-danger: #f03330;
-  --border-positive: #14ae5c;
-  --border-danger: #ff7d6f;
-}
-
-/* Reset CSS */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html,
-body {
-  font-family: var(--fontInter);
-  background: var(--bg-primary);
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul,
-ol {
-  list-style: none;
-}
-
-/* Reset CSS */
-
-/* Global styles */
-
-.container {
-  max-width: 1420px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-figure {
-  display: flex;
-}
-
-body {
-  height: 100vh;
-  overflow: hidden;
-}
-
-::-webkit-scrollbar {
-  color: var(--color-darkSky);
-  width: 4px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--color-darkSky);
-  border-radius: 8px;
-}
-
-/* Global styles */
-
-/* Navbar CSS starts here */
-.navbar {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  padding: 16px 0;
-  border-bottom: 0.5px solid var(--border-primary);
-
-  .logo-wrapper {
-    display: flex;
-
-    .logo {
-      width: 48px;
-      height: auto;
-    }
-  }
-
-  .nav-items-wrapper {
-    max-width: 1420px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    justify-content: space-between;
-  }
-
-  .nav-menu-items-wrapper {
-    display: flex;
-    align-items: center;
-
-    .nav-link {
-      padding: 4px 12px;
-      color: var(--text-neutral-tertiary);
-      font-size: 16px;
-      word-break: keep-all;
-    }
-
-    .nav-link.active {
-      color: var(--text-neutral);
-      border-bottom: 1px solid var(--text-neutral);
-    }
-  }
-
-  .search-box {
-    display: flex;
-    flex-grow: 1;
-    position: relative;
-    border-radius: 9999px;
-    overflow: hidden;
-
-    .search-input-box {
-      padding: 12px 48px 12px 16px;
-      border-radius: 9999px;
-      width: 100%;
-      border: 1px solid var(--border-primary);
-      background: var(--bg-primary);
-      outline: none;
-      font-size: 16px;
-      color: var(--white-40p);
-    }
-
-    .search-button {
-      background: transparent;
-      border: none;
-      outline: none;
-      position: absolute;
-      top: 50%;
-      right: 0px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0px 16px;
-      transform: translateY(-50%);
-      cursor: pointer;
-      height: 100%;
-      border-top-right-radius: 9999px;
-      border-bottom-right-radius: 9999px;
-    }
-  }
-
-  .account-link {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px;
-    background: var(--bg-secondary);
-    color: var(--text-primary);
-    font-size: 16px;
-    line-height: 1.15em;
-    border-radius: 10px;
-    border: 1px solid var(--border-secondary);
-  }
-}
-
-@media (max-width: 1420px) {
-  .navbar {
-    padding: 16px;
-  }
-}
-
-@media (max-width: 1200px) {
-  .large-screen-nav {
-    display: none;
-  }
-}
-
-@media (max-width: 1240px) {
-  .nav-items-wrapper {
-    gap: 16px !important;
-  }
-}
-
-/* small screen nav start here */
-.small-nav {
-  width: 100%;
-  height: 64px;
-}
-
-.sm-nav-main {
-  width: 100%;
-  height: 100%;
-  padding: 0px 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 0.5px solid var(--border-primary);
-}
-
-.sm-logo-part {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.portfolio-text {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.search-and-berger {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.berger-button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-/* menu small screen */
-
-/* Sidebar Overlay */
-.sidebar-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease-in-out;
-}
-
-/* Sidebar Menu */
-.sidebar-menu {
-  position: fixed;
-  top: 0;
-  left: -80%;
-  width: 80%;
-  height: 100%;
-  background: var(--bg-secondary);
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
-  transition: left 0.3s ease-in-out;
-  padding: 20px;
-  z-index: 999;
-}
-
-/* Close Button */
-.close-btn {
-  cursor: pointer;
-  position: absolute;
-  right: 15px;
-  top: 15px;
-}
-
-/* Sidebar Active */
-.sidebar-menu.active {
-  left: 0;
-}
-
-.sidebar-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Sidebar Items */
-.sidebar-menu ul {
-  list-style: none;
-  padding: 20px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.sidebar-menu ul li {
-  padding: 10px 15px;
-  color: var(--text-primary);
-  cursor: pointer;
-  border: 1px solid transparent;
-  transition: all 0.3s ease;
-}
-
-.sidebar-menu ul li:hover {
-  border: 1px solid var(--white-70p);
-}
-
-.account-sm-menu {
-  width: 100%;
-  margin-top: 24px;
-  display: flex;
-  align-items: center;
-  border: 1px solid var(--white-70p);
-  padding: 8px;
-  gap: 8px;
-  justify-content: center;
-  border-radius: 12px;
-}
-
-.account-sm-menu p {
-  color: var(--text-primary);
-}
-
-@media (min-width: 1201px) {
-  .small-screen-nav {
-    display: none;
-  }
-}
-
-/* Navbar CSS ends here */
-
-/* Portfolio Header CSS starts here */
-
-.portfolio-header-content-wrapper {
-  display: flex;
-  justify-content: space-between;
-  padding: 42px 0px;
-
-  .avatar-username {
-    display: flex;
-    align-items: start;
-    gap: 16px;
-
-    .user-avatar {
-      width: 80px;
-      aspect-ratio: 1;
-      border-radius: 9999px;
-      object-fit: cover;
-    }
-
-    .name-wallet {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .user-name {
-      font-size: 48px;
-      line-height: 1.2em;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-
-    .wallets {
-      font-size: 16px;
-      color: var(--text-primary);
-    }
-  }
-
-  .balance-changes {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    padding-right: 50px;
-
-    .multi-wallet-mobile {
-      display: none;
-    }
-
-    .balance {
-      font-size: 48px;
-      line-height: 1.2em;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-
-    .changes {
-      font-size: 16px;
-      color: var(--white-40p);
-
-      .percentage-change {
-        color: var(--text-primary);
-      }
-    }
-  }
-}
-
-@media (max-width: 1200px) {
-  .portfolio-header-content-wrapper {
-    padding: 16px 0;
-  }
-}
-
-@media (max-width: 1420px) {
-  section:not(.table-section) {
-    padding: 0 12px;
-  }
-
-  .table-section {
-    tr {
-      padding-left: 12px !important;
-      padding-right: 12px !important;
-    }
-  }
-
-  .balance {
-    font-size: 20px;
-  }
-
-  .balance-changes {
-    padding: 0 !important;
-  }
-}
-
-@media (max-width: 1200px) {
-  .multi-wallet-mobile {
-    display: inline-block !important;
-    font-size: 14px;
-    line-height: 1.4em;
-    color: var(--text-neutral-tertiary);
-  }
-
-  .avatar-username {
-    display: none !important;
-  }
-}
-
-/* Portfolio Header CSS ends here */
-
-/* Portfolio Table Controls CSS starts here */
-
-.table-controls-content-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 21px 0;
-
-  .controls {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-
-    .control-button {
-      height: 34px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 6.5px 12px;
-      background-color: var(--bg-secondary);
-      border-radius: 10px;
-      border: 1px solid var(--border-secondary);
-      font-size: 16px;
-      color: var(--text-primary);
-      cursor: pointer;
-
-      &:not(:last-child) {
-        font-size: 14px;
-        padding: 8px 12px;
-        line-height: 1.15em;
-      }
-
-      .control-button-left-icon {
-        height: 16px;
-        width: auto;
-        margin-right: 8px;
-      }
-    }
-
-    .refresh-button {
-      height: 40px;
-      aspect-ratio: 1;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      background-color: var(--bg-secondary);
-      border-radius: 10px;
-      border: 1px solid var(--border-secondary);
-      font-size: 16px;
-      color: var(--text-primary);
-      cursor: pointer;
-    }
-  }
-
-  .table-search {
-    display: flex;
-    align-items: center;
-    max-width: 240px;
-    width: 100%;
-    position: relative;
-    border-radius: 9999px;
-    overflow: hidden;
-
-    .search-input-box {
-      padding: 12px 40px 12px 16px;
-      border-radius: 9999px;
-      width: 100%;
-      border: 1px solid var(--border-primary);
-      background: var(--bg-primary);
-      outline: none;
-      font-size: 16px;
-      color: var(--white-40p);
-    }
-
-    .search-button {
-      background: transparent;
-      border: none;
-      outline: none;
-      position: absolute;
-      top: 50%;
-      right: 0px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0px 16px 0px 8px;
-      transform: translateY(-50%);
-      cursor: pointer;
-      height: 100%;
-      border-top-right-radius: 9999px;
-      border-bottom-right-radius: 9999px;
-    }
-  }
-}
-
-@media (max-width: 692px) {
-  .table-controls-content-wrapper {
-    /* flex-direction: column; */
-    gap: 8px;
-  }
-
-  .controls {
-    gap: 8px !important;
-  }
-
-  .control-button {
-    height: 40px !important;
-    padding: 6px 8px !important;
-  }
-
-  .control-button:nth-child(n + 2):nth-last-child(n + 2) {
-    display: none !important;
-  }
-
-  .refresh-button {
-    display: flex !important;
-  }
-}
-
-/* Portfolio Table Controls CSS ends here */
-
-/* Table section CSS starts here */
-
-.table-section {
-  height: calc(100vh - 340px);
-  overflow-y: auto;
-
-  .table-scroll {
-    width: 100%;
-    overflow-x: auto;
-  }
-
-  .table-scroll::-webkit-scrollbar {
-    display: none;
-  }
-
-  .table-scroll table {
-    min-width: 900px;
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  .table-content-wrapper {
-    overflow-x: auto !important;
-  }
-
-  table {
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .table-heading {
-    display: grid;
-    padding: 16px calc((100vw - 1420px) / 2);
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-
-    th {
-      text-align: start;
-      font-size: 14px;
-      color: var(--white-70p);
-      font-weight: 300;
-      background: transparent;
-
-      &:first-child {
-        padding-left: 16px;
-      }
-
-      &:last-child {
-        text-align: end;
-        padding-right: 16px;
-      }
-    }
-  }
-
-  td {
-    vertical-align: text-top;
-    color: var(--text-primary);
-    font-size: 16px;
-  }
-
-  .col-span {
-    column-span: 6;
-  }
-
-  tr {
-    border-bottom: 0.5px solid var(--border-primary);
-    padding: 7px calc((100% - 1420px) / 2);
-    display: grid;
-    grid-template-columns: 1fr 6fr;
-
-    td {
-      .action-cell {
-        text-align: end;
-      }
-
-      &:last-child {
-        vertical-align: middle;
-      }
-    }
-
-    &:nth-child(odd) {
-      background: transparent;
-    }
-
-    &:nth-child(even) {
-      background: var(--white-2p);
-    }
-  }
-
-  tbody > tr:last-child {
-    border-bottom: 0;
-  }
-
-  .token-cell {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    width: 100%;
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--text-primary);
-  }
-
-  .token-icon {
-    width: 40px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
-  .row-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    align-items: center;
-  }
-
-  .multi-wallet {
-    font-size: 16px;
-    color: var(--color-darkSky);
-    cursor: pointer;
-    width: fit-content;
-    display: flex;
-    align-items: center;
-
-    .down-arrow-icon {
-      width: 16px;
-      aspect-ratio: 1;
-      transition: transform 0.3s ease;
-    }
-
-    .down-arrow-icon.rotated {
-      transform: rotate(180deg);
-    }
-  }
-
-  .table-xrp-token-wrapper {
-    display: flex;
-    flex-direction: column;
-    font-size: 16px;
-    color: var(--text-primary);
-
-    span {
-      &:last-child {
-        color: var(--text-secondary);
-        font-size: 14px;
-      }
-    }
-  }
-
-  .sub-wallets-wrapper {
-    display: none;
-    margin-top: 10px;
-  }
-
-  .sub-wallets-wrapper.visible {
-    display: block;
-  }
-
-  .sub-wallet {
-    padding: 7px 0;
-  }
-
-  .trade-button {
-    color: var(--color-darkSky);
-    font-size: 16px;
-    background: none;
-    border: 0.5px solid transparent;
-    border-radius: 10px;
-    padding: 6px 8px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    outline: none;
-
-    &:hover {
-      border-color: var(--border-primary);
-    }
-  }
-
-  .action-cell {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .action-menu-icon {
-    cursor: pointer;
-    display: flex;
-    position: relative;
-  }
-
-  .action-menu-wrapper {
-    position: relative;
-  }
-
-  .action-menu {
-    position: absolute;
-    top: 0;
-    right: 20px;
-    border: 0.5px solid var(--border-primary);
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
-    padding: 0;
-    width: 120px;
-    overflow: hidden;
-    display: none;
-  }
-
-  .action-menu a {
-    display: flex;
-    justify-content: center;
-    color: var(--text-primary);
-    padding: 8px 16px;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 300;
-    transition: background 0.2s;
-  }
-
-  .action-menu a:hover {
-    background: rgba(111, 147, 254, 0.2);
-  }
-
-  .wallet-info {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .wallet-address {
-    color: var(--text-secondary);
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 768px) {
-  .table-scroll {
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
-  .table-scroll {
-    overflow-x: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-}
-
-/* Table section CSS ends here */
-
-/* Modals */
-
-/* Trade Modal */
-.trade-modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: none;
-  align-items: center;
-  justify-content: center;
-
-  .modal {
-    background: var(--bg-secondary);
-    border-radius: 16px;
-    padding: 24px 32px;
-    width: 100%;
-    max-width: 617px;
-    color: var(--text-primary);
-  }
-
-  .modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 24px;
-    gap: 16px;
-  }
-
-  .wallet-drop-down-wrapper {
-    width: 100%;
-  }
-
-  .wallet-select {
-    display: flex;
-    border-radius: 10px;
-    border: 1px solid var(--border-secondary);
-    padding-left: 16px;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .wallet-select::after {
-    content: url(../public/chevron-down-icon.svg);
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 12px;
-    color: var(--text-primary);
-    right: 12px;
-    pointer-events: none;
-  }
-
-  .wallet-icon {
-    width: 20px;
-    height: auto;
-  }
-
-  .wallet-options {
-    width: 100%;
-    height: 100%;
-    padding: 12px;
-    color: var(--text-primary);
-    appearance: none;
-    border: none;
-    -webkit-appearance: none;
-    font-size: 14px;
-    cursor: pointer;
-    outline: none;
-    background: var(--bg-secondary);
-  }
-
-  select option {
-    background-color: var(--bg-secondary);
-    color: var(--text-primary);
-  }
-
-  .close-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    aspect-ratio: 1;
-    background: transparent;
-    border: 1px solid var(--border-secondary);
-    border-radius: 10px;
-    cursor: pointer;
-  }
-
-  .token-info {
-    display: flex;
-    text-align: start;
-    gap: 16px;
-    margin-bottom: 32px;
-  }
-
-  .token-icon {
-    width: 100px;
-    aspect-ratio: 1;
-    border-radius: 9999px;
-    object-fit: cover;
-  }
-
-  .token-name {
-    color: var(--text-primary);
-    font-size: 16px;
-    line-height: 1.4em;
-  }
-
-  .token-amount {
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 1.2em;
-    margin-bottom: 4px;
-  }
-
-  .token-change {
-    font-size: 16px;
-    color: var(--white-40p);
-  }
-
-  .percentage-change {
-    color: var(--text-primary);
-  }
-
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-bottom: 32px;
-  }
-
-  .stat-box {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 8px;
-    border-radius: 10px;
-  }
-
-  .stat-label {
-    color: var(--white-70p);
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 1.15em;
-  }
-
-  .stat-xrp {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.15em;
-    color: var(--text-primary);
-    margin: 4px 0;
-  }
-
-  .stat-token {
-    color: var(--text-secondary);
-    font-size: 14px;
-  }
-
-  .action-buttons {
-    display: flex;
-    gap: 0;
-    margin-bottom: 16px;
-    border-radius: 9999px;
-    border: 0.5px solid var(--border-primary);
-  }
-
-  .action-button {
-    flex: 1;
-    padding: 12px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    border-radius: 9999px;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.15em;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-
-  .buy-active {
-    background: var(--bg-positive);
-    color: var(--text-primary);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  }
-
-  .sell-active {
-    background: var(--bg-danger);
-    color: var(--text-primary);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  }
-
-  .button-inactive {
-    background: transparent;
-    color: var(--text-primary);
-  }
-
-  .presets {
-    margin-bottom: 16px;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .preset-label {
-    color: var(--text-primary);
-    font-size: 16px;
-    line-height: 1.4em;
-    margin-bottom: 16px;
-  }
-
-  .preset-buttons {
-    display: flex;
-    gap: 6px;
-  }
-
-  .preset-button {
-    padding: 6px 8px;
-    background: transparent;
-    border: none;
-    color: var(--text-secondary);
-    cursor: pointer;
-  }
-
-  .amount-input-container {
-    margin-bottom: 16px;
-  }
-
-  .amount-input {
-    width: 100%;
-    background: var(--bg-primary);
-    border: 1px solid var(--border-primary);
-    border-radius: 10px;
-    padding: 12px 16px;
-    color: var(--text-primary);
-    margin-bottom: 16px;
-    font-size: 16px;
-    line-height: 1.15em;
-    outline: none;
-  }
-
-  .amount-input::placeholder {
-    color: var(--white-40p);
-  }
-
-  .amount-details {
-    display: flex;
-    justify-content: space-between;
-    color: var(--text-primary);
-    font-size: 14px;
-  }
-
-  .price-impact-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .quick-action-button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 10px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.15em;
-    color: var(--text-primary);
-    cursor: pointer;
-    margin-bottom: 16px;
-  }
-
-  .quick-action-button.buy-active {
-    border: 1px solid var(--border-positive);
-  }
-
-  .quick-action-button.sell-active {
-    border: 1px solid var(--border-danger);
-  }
-
-  .advanced-settings {
-    text-align: left;
-    background: none;
-    border: none;
-    color: var(--text-primary);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-}
-
-.trade-modal-overlay.active {
-  display: flex;
-}
-
-@media (max-width: 692px) {
-  .trade-modal-overlay {
-    padding: 16px;
-
-    .modal {
-      padding: 24px;
-      width: 100%;
-      max-width: 402px;
-    }
-
-    .modal-header {
-      margin-bottom: 16px;
-      gap: 6px;
-    }
-
-    .wallet-select {
-      padding-left: 8px;
-    }
-
-    .token-info {
-      display: flex;
-      text-align: start;
-      gap: 16px;
-      margin-bottom: 32px;
-    }
-
-    .token-icon {
-      width: 60px;
-      height: 60px;
-    }
-
-    .token-name {
-      font-size: 14px;
-      line-height: 1.4em;
-    }
-
-    .token-amount {
-      font-size: 20px;
-      line-height: 1.15em;
-      margin-bottom: 4px;
-    }
-
-    .token-change {
-      font-size: 14px;
-    }
-
-    .stats-grid {
-      gap: 6px;
-      margin-bottom: 16px;
-    }
-
-    .action-buttons {
-      margin-bottom: 12px;
-    }
-
-    .presets {
-      margin-bottom: 12px;
-    }
-
-    .preset-label {
-      margin-bottom: 12px;
-    }
-
-    .preset-buttons {
-      display: flex;
-      gap: 2px;
-    }
-
-    .amount-input-container {
-      margin-bottom: 12px;
-    }
-
-    .amount-input {
-      margin-bottom: 12px;
-    }
-
-    .quick-action-button {
-      margin-bottom: 12px;
-    }
-  }
-}
-
-/* Trade Modal */
-
-/* Share Modal */
-
-.share-your-pnl {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-
-.modal-share-content {
-  width: 624px;
-  background-color: var(--bg-secondary);
-  padding: 24px 32px;
-  border-radius: 16px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-@media (max-width: 640px) {
-  .modal-share-content {
-    width: 310px;
-    padding: 12px 12px;
-    gap: 12px;
-  }
-}
-
-.modal-share-heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.space-div {
-  width: 40px;
-  height: 40px;
-}
-
-@media (max-width: 640px) {
-  .space-div {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-.share-title {
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--text-primary);
-  text-transform: uppercase;
-  text-align: center;
-}
-
-@media (max-width: 640px) {
-  .share-title {
-    font-size: 16px;
-  }
-}
-
-.close-div {
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--border-secondary);
-  background-color: var(--bg-secondary);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-@media (max-width: 640px) {
-  .close-div {
-    width: 20px;
-    height: 20px;
-    border-radius: 6px;
-  }
-
-  .clo-img-sm {
-    width: 12px;
-    height: 12px;
-  }
-}
-
-.tweet-and-download {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 60px;
-}
-
-@media (max-width: 640px) {
-  .tweet-and-download {
-    gap: 20px;
-  }
-
-  .tweet-img-sm {
-    width: 22px;
-    height: 22px;
-  }
-
-  .download-img-sm {
-    width: 22px;
-    height: 22px;
-  }
-}
-
-.tweet-download-button {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 6px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.tweet-icon-div {
-  width: 60px;
-  height: 60px;
-  border: 1px solid #6f93fe;
-  background-color: #456eeb;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@media (max-width: 640px) {
-  .tweet-icon-div {
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-  }
-}
-
-.download-icon-div {
-  width: 60px;
-  height: 60px;
-  border: 1px solid var(--border-primary);
-  background-color: var(--bg-secondary);
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@media (max-width: 640px) {
-  .download-icon-div {
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-  }
-}
-
-.tweet-text {
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--text-primary);
-}
-
-@media (max-width: 640px) {
-  .tweet-text {
-    font-size: 12px;
-    font-weight: 400;
-    color: var(--text-primary);
-  }
-}
-
-/* Share Modal */
-
-/* History Modal */
-
-.history-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: none;
-  justify-content: center;
-  align-items: center;
-
-  .modal {
-    background: var(--bg-secondary);
-    border-radius: 16px;
-    padding: 24px 32px;
-    width: 100%;
-    max-width: 834px;
-    color: var(--text-primary);
-    max-height: 692px;
-  }
-
-  .close-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    aspect-ratio: 1;
-    background: transparent;
-    border: 1px solid var(--border-secondary);
-    border-radius: 10px;
-    cursor: pointer;
-  }
-
-  .modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-    margin-bottom: 32px;
-    gap: 16px;
-  }
-
-  .token-info {
-    display: flex;
-    text-align: start;
-    gap: 16px;
-  }
-
-  .token-icon {
-    width: 100px;
-    aspect-ratio: 1;
-    border-radius: 9999px;
-    object-fit: cover;
-  }
-
-  .token-name {
-    color: var(--text-primary);
-    font-size: 16px;
-    line-height: 1.4em;
-  }
-
-  .token-amount {
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 1.2em;
-    margin-bottom: 4px;
-  }
-
-  .token-change {
-    color: var(--white-40p);
-  }
-
-  .percentage-change {
-    color: var(--text-primary);
-  }
-
-  .table-wrapper {
-    max-height: 500px;
-    overflow: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  .table-wrapper::-webkit-scrollbar {
-    display: none;
-  }
-
-  table {
-    border-collapse: collapse;
-    margin-top: 10px;
-  }
-
-  thead {
-    border-bottom: 0.5px solid var(--border-primary);
-  }
-
-  th,
-  td {
-    text-align: left;
-    white-space: nowrap;
-  }
-
-  th {
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 1.4em;
-    color: var(--white-70p);
-  }
-
-  tr {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 40px;
-    font-size: 16px;
-    font-weight: 400;
-    padding: 8px 0;
-    border: none;
-    column-gap: 12px;
-  }
-
-  tbody tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.02);
-  }
-
-  tbody tr:nth-child(odd) {
-    background-color: transparent;
-  }
-
-  .buy {
-    td {
-      color: var(--text-positive);
-    }
-  }
-
-  .sell {
-    td {
-      color: var(--text-danger);
-    }
-  }
-
-  .icon {
-    color: var(--text-primary);
-    text-decoration: none;
-    font-size: 14px;
-  }
-
-  .modal-overlay.active {
-    display: flex;
-  }
-
-  .modal-table-scroll {
-    width: 100%;
-    overflow-x: auto;
-  }
-
-  .modal-table-scroll::-webkit-scrollbar {
-    display: none;
-  }
-
-  .modal-table-scroll table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-}
-
-@media (max-width: 900px) {
-  .history-modal-overlay {
-    padding: 16px;
-
-    .modal {
-      padding: 24px;
-      max-width: 90vw;
-      max-height: 90vh;
-      overflow: hidden;
-    }
-
-    .modal-header {
-      margin-bottom: 8px;
-    }
-
-    .token-info {
-      gap: 8px;
-    }
-
-    .token-icon {
-      width: 60px;
-      height: 60px;
-    }
-
-    .token-name {
-      font-size: 14px;
-      line-height: 1.4em;
-    }
-
-    .token-amount {
-      font-size: 20px;
-      line-height: 1.2em;
-      margin-bottom: 4px;
-    }
-
-    .token-change {
-      font-size: 14px;
-    }
-
-    .table-wrapper {
-      max-height: calc(90vh - 225px);
-      max-width: calc(90vw);
-      overflow: auto;
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-
-    .table-wrapper::-webkit-scrollbar {
-      display: none;
-    }
-
-    thead,
-    tr {
-      width: 100dvw;
-    }
-
-    .modal-table-scroll {
-      width: 100%;
-      overflow-x: auto;
-    }
-
-    .modal-table-scroll::-webkit-scrollbar {
-      display: none;
-    }
-
-    .modal-table-scroll table {
-      width: 100%;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .modal-table-scroll {
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
-  .modal-table-scroll {
-    overflow-x: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-}
-
-/* History Modal */
-
-/* Modals */
-
-  </style>
-
+  <link rel="stylesheet" href="./styles/global.css" />
 </head>
 
 <body>
@@ -1638,7 +14,7 @@ body {
   <nav class="navbar large-screen-nav">
     <div class="nav-items-wrapper">
       <figure class="logo-wrapper">
-        <img class="logo" src="./public/fl-logo.svg" alt="FL-Logo" />
+        <img class="logo" src="./public/images/fl-logo.svg" alt="FL-Logo" />
       </figure>
       <ul class="nav-menu-items-wrapper">
         <li class="nav-item"><a class="nav-link" href="#">New Tokens</a></li>
@@ -1655,11 +31,11 @@ body {
       <div class="search-box">
         <input class="search-input-box" type="text" placeholder="Search Token" />
         <button type="submit" class="search-button">
-          <img src="./public/search-icon.svg" alt="Search-icon" />
+          <img src="./public/images/search-icon.svg" alt="Search-icon" />
         </button>
       </div>
       <a href="#" class="account-link">
-        <img src="./public/user-icon.svg" alt="User-icon" />
+        <img src="./public/images/user-icon.svg" alt="User-icon" />
         <p>Account</p>
       </a>
     </div>
@@ -1670,23 +46,23 @@ body {
     <div class="sm-nav-main">
       <div class="sm-logo-part">
         <a href="#">
-          <img src="./public/logo-sm.svg" alt="sm-logo" />
+          <img src="./public/images/logo-sm.svg" alt="sm-logo" />
         </a>
         <h4 class="portfolio-text">Portfolio</h4>
       </div>
       <div class="search-and-berger">
         <a href="#">
-          <img src="./public/search-sm.svg" alt="sm-logo" />
+          <img src="./public/images/search-sm.svg" alt="sm-logo" />
         </a>
         <button class="berger-button">
-          <img src="./public/menu-sm.svg" alt="menu-logo" />
+          <img src="./public/images/menu-sm.svg" alt="menu-logo" />
         </button>
 
         <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
         <div class="sidebar-menu" id="sidebarMenu">
           <div class="close-div close-btn" id="closeMenu">
-            <img src="./public/cross-icon.svg" alt="close-icon" class="clo-img-sm" />
+            <img src="./public/images/cross-icon.svg" alt="close-icon" class="clo-img-sm" />
           </div>
 
           <ul>
@@ -1698,7 +74,7 @@ body {
             <li><a href="#">Launch Token</a></li>
           </ul>
           <a href="#" class="account-sm-menu">
-            <img src="./public/user-icon.svg" alt="User-icon" />
+            <img src="./public/images/user-icon.svg" alt="User-icon" />
             <p>Account</p>
           </a>
         </div>
@@ -1716,7 +92,7 @@ body {
         <div class="portfolio-header-content-wrapper">
           <div class="avatar-username">
             <figure class="avatar">
-              <img class="user-avatar" src="./public/avatar-icon.svg" alt="Avatar" />
+              <img class="user-avatar" src="./public/images/avatar-icon.svg" alt="Avatar" />
             </figure>
             <div class="name-wallets">
               <h2 class="user-name">Portfolio</h2>
@@ -1742,27 +118,27 @@ body {
         <div class="table-controls-content-wrapper">
           <div class="controls">
             <button class="control-button">
-              <img class="control-button-left-icon" src="./public/sliders-icon.svg" alt="sliders-icon" />
+              <img class="control-button-left-icon" src="./public/images/sliders-icon.svg" alt="sliders-icon" />
               Customise
-              <img src="./public/chevron-down-icon.svg" alt="chevron-down-icon" />
+              <img src="./public/images/chevron-down-icon.svg" alt="chevron-down-icon" />
             </button>
             <button class="control-button">
-              <img class="control-button-left-icon" src="./public/wallet-icon.svg" alt="wallet-icon" />
+              <img class="control-button-left-icon" src="./public/images/wallet-icon.svg" alt="wallet-icon" />
               Wallets
-              <img src="./public/chevron-down-icon.svg" alt="chevron-down-icon" />
+              <img src="./public/images/chevron-down-icon.svg" alt="chevron-down-icon" />
             </button>
             <button class="control-button">
-              <img class="control-button-left-icon" src="./public/star-icon.svg" alt="star-icon" />
+              <img class="control-button-left-icon" src="./public/images/star-icon.svg" alt="star-icon" />
               Refresh PnL
             </button>
             <button class="refresh-button">
-              <img class="refresh-button-icon" src="./public/refresh-icon.svg" alt="refresh-icon" />
+              <img class="refresh-button-icon" src="./public/images/refresh-icon.svg" alt="refresh-icon" />
             </button>
           </div>
           <div class="table-search">
             <input class="search-input-box" type="text" placeholder="Search Inside Portfolio" />
             <button type="submit" id="tableSearch" class="search-button">
-              <img src="./public/search-icon.svg" alt="Search-icon" />
+              <img src="./public/images/search-icon.svg" alt="Search-icon" />
             </button>
           </div>
         </div>
@@ -1792,7 +168,7 @@ body {
               <tr>
                 <td>
                   <div class="token-cell">
-                    <img class="token-icon" src="./public/avatar-icon.svg" alt="Token-icon" />
+                    <img class="token-icon" src="./public/images/avatar-icon.svg" alt="Token-icon" />
                     <span>TOKEN</span>
                   </div>
                 </td>
@@ -1801,7 +177,7 @@ body {
                     <div class="row-content">
                       <div class="multi-wallet wallet-name">
                         Multi (3)
-                        <img class="down-arrow-icon" src="./public/down-arrow.svg" alt="Down-arrow-icon" />
+                        <img class="down-arrow-icon" src="./public/images/down-arrow.svg" alt="Down-arrow-icon" />
                       </div>
                       <div class="table-xrp-token-wrapper">
                         <span class="xrp-bought">0 XRP</span><span class="token-bought">0 TOKEN</span>
@@ -1818,7 +194,7 @@ body {
                       <div class="action-cell">
                         <div class="action-menu-wrapper">
                           <span class="action-menu-icon">
-                            <img src="./public/dot-icon.svg" alt="more-icon" />
+                            <img src="./public/images/dot-icon.svg" alt="more-icon" />
                           </span>
                         </div>
                         <button class="trade-button">Trade</button>
@@ -1846,7 +222,7 @@ body {
                           <div class="action-cell">
                             <div class="action-menu-wrapper">
                               <span class="action-menu-icon">
-                                <img src="./public/dot-icon.svg" alt="more-icon" />
+                                <img src="./public/images/dot-icon.svg" alt="more-icon" />
                               </span>
                             </div>
                             <button class="trade-button">Trade</button>
@@ -1874,7 +250,7 @@ body {
                           <div class="action-cell">
                             <div class="action-menu-wrapper">
                               <span class="action-menu-icon">
-                                <img src="./public/dot-icon.svg" alt="more-icon" />
+                                <img src="./public/images/dot-icon.svg" alt="more-icon" />
                               </span>
                             </div>
                             <button class="trade-button">Trade</button>
@@ -1902,7 +278,7 @@ body {
                           <div class="action-cell">
                             <div class="action-menu-wrapper">
                               <span class="action-menu-icon">
-                                <img src="./public/dot-icon.svg" alt="more-icon" />
+                                <img src="./public/images/dot-icon.svg" alt="more-icon" />
                               </span>
                             </div>
                             <button class="trade-button">Trade</button>
@@ -1921,7 +297,7 @@ body {
               <tr>
                 <td>
                   <div class="token-cell">
-                    <img class="token-icon" src="./public/avatar-icon.svg" alt="Token-icon" />
+                    <img class="token-icon" src="./public/images/avatar-icon.svg" alt="Token-icon" />
                     <span>TOKEN</span>
                   </div>
                 </td>
@@ -1947,7 +323,7 @@ body {
                       <div class="action-cell">
                         <div class="action-menu-wrapper">
                           <span class="action-menu-icon">
-                            <img src="./public/dot-icon.svg" alt="more-icon" />
+                            <img src="./public/images/dot-icon.svg" alt="more-icon" />
                           </span>
                         </div>
                         <button class="trade-button">Trade</button>
@@ -1964,7 +340,7 @@ body {
               <tr>
                 <td>
                   <div class="token-cell">
-                    <img class="token-icon" src="./public/avatar-icon.svg" alt="Token-icon" />
+                    <img class="token-icon" src="./public/images/avatar-icon.svg" alt="Token-icon" />
                     <span>TOKEN</span>
                   </div>
                 </td>
@@ -1990,7 +366,7 @@ body {
                       <div class="action-cell">
                         <div class="action-menu-wrapper">
                           <span class="action-menu-icon">
-                            <img src="./public/dot-icon.svg" alt="more-icon" />
+                            <img src="./public/images/dot-icon.svg" alt="more-icon" />
                           </span>
                         </div>
                         <button class="trade-button">Trade</button>
@@ -2007,7 +383,7 @@ body {
               <tr>
                 <td>
                   <div class="token-cell">
-                    <img class="token-icon" src="./public/avatar-icon.svg" alt="Token-icon" />
+                    <img class="token-icon" src="./public/images/avatar-icon.svg" alt="Token-icon" />
                     <span>TOKEN</span>
                   </div>
                 </td>
@@ -2016,7 +392,7 @@ body {
                     <div class="row-content">
                       <div class="multi-wallet wallet-name">
                         Multi (2)
-                        <img class="down-arrow-icon" src="./public/down-arrow.svg" alt="Down-arrow-icon" />
+                        <img class="down-arrow-icon" src="./public/images/down-arrow.svg" alt="Down-arrow-icon" />
                       </div>
                       <div class="table-xrp-token-wrapper">
                         <span class="xrp-bought">0 XRP</span><span class="token-bought">0 TOKEN</span>
@@ -2033,7 +409,7 @@ body {
                       <div class="action-cell">
                         <div class="action-menu-wrapper">
                           <span class="action-menu-icon">
-                            <img src="./public/dot-icon.svg" alt="more-icon" />
+                            <img src="./public/images/dot-icon.svg" alt="more-icon" />
                           </span>
                         </div>
                         <button class="trade-button">Trade</button>
@@ -2061,7 +437,7 @@ body {
                           <div class="action-cell">
                             <div class="action-menu-wrapper">
                               <span class="action-menu-icon">
-                                <img src="./public/dot-icon.svg" alt="more-icon" />
+                                <img src="./public/images/dot-icon.svg" alt="more-icon" />
                               </span>
                             </div>
                             <button class="trade-button">Trade</button>
@@ -2089,7 +465,7 @@ body {
                           <div class="action-cell">
                             <div class="action-menu-wrapper">
                               <span class="action-menu-icon">
-                                <img src="./public/dot-icon.svg" alt="more-icon" />
+                                <img src="./public/images/dot-icon.svg" alt="more-icon" />
                               </span>
                             </div>
                             <button class="trade-button">Trade</button>
@@ -2108,7 +484,7 @@ body {
               <tr>
                 <td>
                   <div class="token-cell">
-                    <img class="token-icon" src="./public/avatar-icon.svg" alt="Token-icon" />
+                    <img class="token-icon" src="./public/images/avatar-icon.svg" alt="Token-icon" />
                     <span>TOKEN</span>
                   </div>
                 </td>
@@ -2134,7 +510,7 @@ body {
                       <div class="action-cell">
                         <div class="action-menu-wrapper">
                           <span class="action-menu-icon">
-                            <img src="./public/dot-icon.svg" alt="more-icon" />
+                            <img src="./public/images/dot-icon.svg" alt="more-icon" />
                           </span>
                         </div>
                         <button class="trade-button">Trade</button>
@@ -2151,7 +527,7 @@ body {
               <tr>
                 <td>
                   <div class="token-cell">
-                    <img class="token-icon" src="./public/avatar-icon.svg" alt="Token-icon" />
+                    <img class="token-icon" src="./public/images/avatar-icon.svg" alt="Token-icon" />
                     <span>TOKEN</span>
                   </div>
                 </td>
@@ -2177,7 +553,7 @@ body {
                       <div class="action-cell">
                         <div class="action-menu-wrapper">
                           <span class="action-menu-icon">
-                            <img src="./public/dot-icon.svg" alt="more-icon" />
+                            <img src="./public/images/dot-icon.svg" alt="more-icon" />
                           </span>
                         </div>
                         <button class="trade-button">Trade</button>
@@ -2194,7 +570,7 @@ body {
               <tr>
                 <td>
                   <div class="token-cell">
-                    <img class="token-icon" src="./public/avatar-icon.svg" alt="Token-icon" />
+                    <img class="token-icon" src="./public/images/avatar-icon.svg" alt="Token-icon" />
                     <span>TOKEN</span>
                   </div>
                 </td>
@@ -2220,7 +596,7 @@ body {
                       <div class="action-cell">
                         <div class="action-menu-wrapper">
                           <span class="action-menu-icon">
-                            <img src="./public/dot-icon.svg" alt="more-icon" />
+                            <img src="./public/images/dot-icon.svg" alt="more-icon" />
                           </span>
                         </div>
                         <button class="trade-button">Trade</button>
@@ -2237,7 +613,7 @@ body {
               <tr>
                 <td>
                   <div class="token-cell">
-                    <img class="token-icon" src="./public/avatar-icon.svg" alt="Token-icon" />
+                    <img class="token-icon" src="./public/images/avatar-icon.svg" alt="Token-icon" />
                     <span>TOKEN</span>
                   </div>
                 </td>
@@ -2263,7 +639,7 @@ body {
                       <div class="action-cell">
                         <div class="action-menu-wrapper">
                           <span class="action-menu-icon">
-                            <img src="./public/dot-icon.svg" alt="more-icon" />
+                            <img src="./public/images/dot-icon.svg" alt="more-icon" />
                           </span>
                         </div>
                         <button class="trade-button">Trade</button>
@@ -2288,7 +664,7 @@ body {
           <div class="modal-header">
             <div class="wallet-drop-down-wrapper">
               <div class="wallet-select">
-                <img src="./public/wallet-icon.svg" alt="Wallet Icon" class="wallet-icon" />
+                <img src="./public/images/wallet-icon.svg" alt="Wallet Icon" class="wallet-icon" />
                 <select class="wallet-options">
                   <option>Wallet 1</option>
                   <option>Wallet 2</option>
@@ -2298,13 +674,13 @@ body {
               </div>
             </div>
             <button class="close-button" onclick="closeModal()">
-              <img src="./public/cross-icon.svg" alt="Close-icon" />
+              <img src="./public/images/cross-icon.svg" alt="Close-icon" />
             </button>
           </div>
 
           <div class="token-info">
             <figure>
-              <img class="token-icon" src="./public/avatar-icon.svg" />
+              <img class="token-icon" src="./public/images/avatar-icon.svg" />
             </figure>
             <div class="token-details">
               <div class="token-name">TOKEN</div>
@@ -2366,7 +742,7 @@ body {
               <div>=0 TOKEN</div>
               <div class="price-impact-wrapper">
                 Price Impact
-                <img src="./public/Info-icon.svg" alt="info-icon" /> ≈
+                <img src="./public/images/Info-icon.svg" alt="info-icon" /> ≈
                 <span class="price-impact">6%</span>
               </div>
             </div>
@@ -2377,9 +753,9 @@ body {
           </button>
 
           <button class="advanced-settings">
-            <img src="./public/settings-icon.svg" alt="Settings-icon" />
+            <img src="./public/images/settings-icon.svg" alt="Settings-icon" />
             Advanced Settings
-            <img src="./public/chevron-down-icon.svg" alt="arrow-down-icon" />
+            <img src="./public/images/chevron-down-icon.svg" alt="arrow-down-icon" />
           </button>
         </div>
       </div>
@@ -2394,20 +770,20 @@ body {
             <div class="space-div"></div>
             <h3 class="share-title">SHARE YOUR PnL CARD</h3>
             <div class="close-div close-share-modal">
-              <img src="./public/cross-icon.svg" alt="close-icon" class="clo-img-sm" />
+              <img src="./public/images/cross-icon.svg" alt="close-icon" class="clo-img-sm" />
             </div>
           </div>
-          <img src="./public/pnl-share-modal.svg" alt="share-des" />
+          <img src="./public/images/pnl-share-modal.svg" alt="share-des" />
           <div class="tweet-and-download">
             <button class="tweet-download-button">
               <div class="tweet-icon-div">
-                <img src="./public/twitter-icon.svg" alt="tweet-icon" class="tweet-img-sm" />
+                <img src="./public/images/twitter-icon.svg" alt="tweet-icon" class="tweet-img-sm" />
               </div>
               <span class="tweet-text">Tweet</span>
             </button>
             <button class="tweet-download-button">
               <div class="download-icon-div">
-                <img src="./public/download-icon.svg" alt="download-icon" class="download-img-sm" />
+                <img src="./public/images/download-icon.svg" alt="download-icon" class="download-img-sm" />
               </div>
               <span class="tweet-text">Download</span>
             </button>
@@ -2424,7 +800,7 @@ body {
           <div class="modal-header">
             <div class="token-info">
               <figure>
-                <img class="token-icon" src="./public/avatar-icon.svg" />
+                <img class="token-icon" src="./public/images/avatar-icon.svg" />
               </figure>
               <div class="token-details">
                 <div class="token-name">TOKEN</div>
@@ -2435,7 +811,7 @@ body {
               </div>
             </div>
             <button class="close-button">
-              <img src="./public/cross-icon.svg" alt="Close-icon" />
+              <img src="./public/images/cross-icon.svg" alt="Close-icon" />
             </button>
           </div>
 
@@ -2463,7 +839,7 @@ body {
                     <td>Feb 4 02:31:12</td>
                     <td>
                       <a href="#" class="icon">
-                        <img class="external-link-icon" src="./public/link-icon.svg" alt="Link-icon" /></a>
+                        <img class="external-link-icon" src="./public/images/link-icon.svg" alt="Link-icon" /></a>
                     </td>
                   </tr>
                   <tr class="buy">
@@ -2474,7 +850,7 @@ body {
                     <td>Wallet 1</td>
                     <td>Feb 4 02:31:12</td>
                     <td>
-                      <a href="#" class="icon"><img class="external-link-icon" src="./public/link-icon.svg"
+                      <a href="#" class="icon"><img class="external-link-icon" src="./public/images/link-icon.svg"
                           alt="Link-icon" /></a>
                     </td>
                   </tr>
@@ -2486,7 +862,7 @@ body {
                     <td>Wallet 1</td>
                     <td>Feb 4 02:31:12</td>
                     <td>
-                      <a href="#" class="icon"><img class="external-link-icon" src="./public/link-icon.svg"
+                      <a href="#" class="icon"><img class="external-link-icon" src="./public/images/link-icon.svg"
                           alt="Link-icon" /></a>
                     </td>
                   </tr>
@@ -2498,7 +874,7 @@ body {
                     <td>Wallet 1</td>
                     <td>Feb 4 02:31:12</td>
                     <td>
-                      <a href="#" class="icon"><img class="external-link-icon" src="./public/link-icon.svg"
+                      <a href="#" class="icon"><img class="external-link-icon" src="./public/images/link-icon.svg"
                           alt="Link-icon" /></a>
                     </td>
                   </tr>
@@ -2510,7 +886,7 @@ body {
                     <td>Wallet 1</td>
                     <td>Feb 4 02:31:12</td>
                     <td>
-                      <a href="#" class="icon"><img class="external-link-icon" src="./public/link-icon.svg"
+                      <a href="#" class="icon"><img class="external-link-icon" src="./public/images/link-icon.svg"
                           alt="Link-icon" /></a>
                     </td>
                   </tr>
@@ -2522,7 +898,7 @@ body {
                     <td>Wallet 1</td>
                     <td>Feb 4 02:31:12</td>
                     <td>
-                      <a href="#" class="icon"><img class="external-link-icon" src="./public/link-icon.svg"
+                      <a href="#" class="icon"><img class="external-link-icon" src="./public/images/link-icon.svg"
                           alt="Link-icon" /></a>
                     </td>
                   </tr>
@@ -2534,7 +910,7 @@ body {
                     <td>Wallet 1</td>
                     <td>Feb 4 02:31:12</td>
                     <td>
-                      <a href="#" class="icon"><img class="external-link-icon" src="./public/link-icon.svg"
+                      <a href="#" class="icon"><img class="external-link-icon" src="./public/images/link-icon.svg"
                           alt="Link-icon" /></a>
                     </td>
                   </tr>
@@ -2546,7 +922,7 @@ body {
                     <td>Wallet 1</td>
                     <td>Feb 4 02:31:12</td>
                     <td>
-                      <a href="#" class="icon"><img class="external-link-icon" src="./public/link-icon.svg"
+                      <a href="#" class="icon"><img class="external-link-icon" src="./public/images/link-icon.svg"
                           alt="Link-icon" /></a>
                     </td>
                   </tr>
@@ -2558,7 +934,7 @@ body {
                     <td>Wallet 1</td>
                     <td>Feb 4 02:31:12</td>
                     <td>
-                      <a href="#" class="icon"><img class="external-link-icon" src="./public/link-icon.svg"
+                      <a href="#" class="icon"><img class="external-link-icon" src="./public/images/link-icon.svg"
                           alt="Link-icon" /></a>
                     </td>
                   </tr>
@@ -2570,7 +946,7 @@ body {
                     <td>Wallet 1</td>
                     <td>Feb 4 02:31:12</td>
                     <td>
-                      <a href="#" class="icon"><img class="external-link-icon" src="./public/link-icon.svg"
+                      <a href="#" class="icon"><img class="external-link-icon" src="./public/images/link-icon.svg"
                           alt="Link-icon" /></a>
                     </td>
                   </tr>
@@ -2582,7 +958,7 @@ body {
                     <td>Wallet 1</td>
                     <td>Feb 4 02:31:12</td>
                     <td>
-                      <a href="#" class="icon"><img class="external-link-icon" src="./public/link-icon.svg"
+                      <a href="#" class="icon"><img class="external-link-icon" src="./public/images/link-icon.svg"
                           alt="Link-icon" /></a>
                     </td>
                   </tr>
@@ -2594,7 +970,7 @@ body {
                     <td>Wallet 1</td>
                     <td>Feb 4 02:31:12</td>
                     <td>
-                      <a href="#" class="icon"><img class="external-link-icon" src="./public/link-icon.svg"
+                      <a href="#" class="icon"><img class="external-link-icon" src="./public/images/link-icon.svg"
                           alt="Link-icon" /></a>
                     </td>
                   </tr>
@@ -2612,214 +988,7 @@ body {
     <!-- Tables section ends here -->
   </main>
 
-  <script>
-    // Table Multiple wallet Open Close
-
-      let multiWallet = document.getElementsByClassName("multi-wallet");
-      function toggleContent(element) {
-        const subContent = element.closest(".row-content").nextElementSibling;
-        subContent.classList.toggle("visible");
-
-        const icon = element.querySelector(".down-arrow-icon");
-        icon.classList.toggle("rotated");
-      }
-      Array.from(multiWallet).forEach((wallet) => {
-        wallet.addEventListener("click", function () {
-          toggleContent(this);
-        });
-      });
-
-      // NavBar
-
-      document.addEventListener("DOMContentLoaded", function () {
-        const menuButton = document.querySelector(".berger-button");
-        const sidebarMenu = document.getElementById("sidebarMenu");
-        const closeMenu = document.getElementById("closeMenu");
-        const overlay = document.getElementById("sidebarOverlay");
-
-        // Function to open menu
-        function openMenu() {
-          sidebarMenu.classList.add("active");
-          overlay.classList.add("active");
-        }
-
-        // Function to close menu
-        function closeSidebar() {
-          sidebarMenu.classList.remove("active");
-          overlay.classList.remove("active");
-        }
-
-        // Event Listeners
-        menuButton.addEventListener("click", openMenu);
-        closeMenu.addEventListener("click", closeSidebar);
-        overlay.addEventListener("click", closeSidebar);
-      });
-
-      // NavBar
-
-      // Table Action menu
-
-      document.addEventListener("DOMContentLoaded", function () {
-        const actionMenu = document.createElement("div");
-        actionMenu.className = "action-menu";
-        actionMenu.style.display = "none";
-
-        actionMenu.innerHTML = `
-                  <a class="tx-history-button" href="#">Tx History</a>
-                  <a class="share-button" href="#">Share</a>
-                  <a class="hide-button" href="#">Hide</a>
-                  <a class="burn-button" href="#">Burn</a>`;
-
-        const actionMenuWrappers = document.querySelectorAll(".action-menu-wrapper");
-        actionMenuWrappers.forEach((wrapper) => {
-          wrapper.appendChild(actionMenu.cloneNode(true));
-
-          wrapper.addEventListener("click", function (event) {
-            // Close any other open menus
-            actionMenuWrappers.forEach((otherWrapper) => {
-              if (otherWrapper !== wrapper) {
-                const otherMenu = otherWrapper.querySelector(".action-menu");
-                otherMenu.style.display = "none";
-              }
-            });
-
-            const menu = this.querySelector(".action-menu");
-            menu.style.display = menu.style.display === "block" ? "none" : "block";
-            event.stopPropagation(); // Prevents immediate closing when clicking the button
-          });
-        });
-
-        // Close the menu when clicking outside
-        document.addEventListener("click", function (event) {
-          actionMenuWrappers.forEach((wrapper) => {
-            const menu = wrapper.querySelector(".action-menu");
-            if (!wrapper.contains(event.target) && !menu.contains(event.target)) {
-              menu.style.display = "none";
-            }
-          });
-        });
-      });
-
-      // Modals
-
-      // Trade Modal
-
-      let currentMode = "buy";
-      const tradeModalOverlay = document.getElementById("tradeModalOverlay");
-      const buyButton = document.getElementById("buyButton");
-      const sellButton = document.getElementById("sellButton");
-      const amountInput = document.getElementById("amountInput");
-      const quickActionButton = document.getElementById("quickActionButton");
-
-      function openModal() {
-        tradeModalOverlay.classList.add("active");
-      }
-
-      document.querySelectorAll(".trade-button").forEach((tradeButton) => {
-        tradeButton.addEventListener("click", openModal);
-      });
-
-      function closeModal() {
-        tradeModalOverlay.classList.remove("active");
-      }
-
-      function setMode(mode) {
-        currentMode = mode;
-        if (mode === "buy") {
-          buyButton.classList.remove("button-inactive");
-          buyButton.classList.add("buy-active");
-          sellButton.classList.remove("sell-active");
-          sellButton.classList.add("button-inactive");
-          quickActionButton.classList.remove("sell-active");
-          quickActionButton.classList.add("buy-active");
-          quickActionButton.textContent = "QUICK BUY";
-          amountInput.placeholder = "Amount to Buy (XRP)";
-        } else {
-          sellButton.classList.remove("button-inactive");
-          sellButton.classList.add("sell-active");
-          buyButton.classList.remove("buy-active");
-          buyButton.classList.add("button-inactive");
-          quickActionButton.classList.remove("buy-active");
-          quickActionButton.classList.add("sell-active");
-          quickActionButton.textContent = "QUICK SELL";
-          amountInput.placeholder = "Amount to Sell (XRP)";
-        }
-      }
-
-      function setAmount(xrp) {
-        amountInput.value = xrp;
-      }
-
-      // Close modal when clicking outside
-      tradeModalOverlay.addEventListener("click", (e) => {
-        if (e.target === tradeModalOverlay) {
-          closeModal();
-        }
-      });
-
-      // Trade Modal
-
-      // Share Modal
-
-      const modal = document.getElementById("modal-share");
-
-      document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll(".share-button").forEach((shareButton) => {
-          shareButton.addEventListener("click", () => {
-            modal.style.display = "flex";
-            document.body.style.overflow = "hidden";
-          });
-        });
-      });
-
-      window.addEventListener("click", (e) => {
-        if (e.target === modal) {
-          modal.style.display = "none";
-        }
-      });
-
-      // Close share modal when clicking the close button
-      document.querySelectorAll(".close-share-modal").forEach((closeModalBtn) => {
-        closeModalBtn.addEventListener("click", () => {
-          modal.style.display = "none";
-          document.body.style.overflow = "auto";
-        });
-      });
-
-      // Share Modal
-
-      // History Modal
-
-      const historyModal = document.querySelector(".history-modal-overlay");
-
-      document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll(".tx-history-button").forEach((openModalButton) => {
-          openModalButton.addEventListener("click", () => {
-            historyModal.style.display = "flex";
-            document.body.style.overflow = "hidden";
-          });
-        });
-      });
-
-      document.querySelectorAll(".close-button").forEach((closeModalBtn) => {
-        closeModalBtn.addEventListener("click", () => {
-          historyModal.style.display = "none";
-          document.body.style.overflow = "auto";
-        });
-      });
-
-      window.addEventListener("click", (e) => {
-        if (e.target === historyModal) {
-          historyModal.style.display = "none";
-          document.body.style.overflow = "auto";
-        }
-      });
-
-      // History Modal
-
-      // Modals
-
-  </script>
+  <script src="./js/main.js"></script>
 </body>
 
 </html>
