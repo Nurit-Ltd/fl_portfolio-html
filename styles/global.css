@@ -447,6 +447,7 @@ body {
     display: flex;
     align-items: center;
     gap: 16px;
+    width: 100%;
 
     .control-button {
       height: 34px;
@@ -473,6 +474,79 @@ body {
         margin-right: 8px;
       }
     }
+
+    .wallet-drop-down-wrapper {
+      width: 100%;
+      max-width: 116px;
+      height: 34px;
+      border-radius: 10px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-secondary);
+    }
+
+    .wallet-select {
+      display: flex;
+      border-radius: 10px;
+      border: 1px solid var(--border-secondary);
+      overflow: hidden;
+      position: relative;
+      height: 100%;
+      width: 100%;
+      padding: 0px 8px;
+
+    }
+
+
+
+    .wallet-select::after {
+      content: url(../public/images/chevron-down-icon.svg);
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+      color: var(--text-primary);
+      right: 8px;
+      pointer-events: none;
+      height: 16px;
+      transition: all 0.3s ease;
+
+    }
+
+    .wallet-select.open::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    .wallet-icon {
+      width: 20px;
+      height: auto;
+    }
+
+    .wallet-options {
+      width: 100%;
+      height: 100%;
+      color: var(--text-primary);
+      appearance: none;
+      border: none;
+      -webkit-appearance: none;
+      font-size: 14px;
+      cursor: pointer;
+      outline: none;
+      background: var(--bg-secondary);
+      padding: 4px 8px;
+    }
+
+
+
+    select option {
+      background-color: var(--bg-secondary);
+      color: var(--text-primary);
+    }
+
+
+
 
     .refresh-button {
       height: 40px;
@@ -544,7 +618,14 @@ body {
     padding: 6px 8px !important;
   }
 
-  .control-button:nth-child(n + 2):nth-last-child(n + 2) {
+  .wallet-drop-down-wrapper {
+    height: 40px !important;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .control-button:nth-child(n + 2),
+  .wallet-drop-down-wrapper {
     display: none !important;
   }
 
@@ -857,6 +938,11 @@ body {
     color: var(--text-primary);
     right: 12px;
     pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  .wallet-select.open::after {
+    transform: translateY(-50%) rotate(180deg);
   }
 
   .wallet-icon {

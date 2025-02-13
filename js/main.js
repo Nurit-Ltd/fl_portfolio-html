@@ -42,6 +42,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // NavBar
 
+// Wallet Select arrow icon
+document.querySelectorAll(".wallet-select").forEach((walletContainer) => {
+  const walletSelect = walletContainer.querySelector(".wallet-options");
+
+  walletSelect.addEventListener("click", (event) => {
+    // Toggle the "open" class on click
+    walletContainer.classList.toggle("open");
+    event.stopPropagation(); // Prevent the document click event from triggering immediately
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", (event) => {
+    if (!walletContainer.contains(event.target)) {
+      walletContainer.classList.remove("open");
+    }
+  });
+});
+
 // Table Action menu
 
 document.addEventListener("DOMContentLoaded", function () {
