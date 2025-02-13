@@ -96,10 +96,6 @@ const sellButton = document.getElementById("sellButton");
 const amountInput = document.getElementById("amountInput");
 const quickActionButton = document.getElementById("quickActionButton");
 
-function openModal() {
-  tradeModalOverlay.classList.add("active");
-}
-
 document.querySelectorAll(".trade-button").forEach((tradeButton) => {
   tradeButton.addEventListener("click", openModal);
 });
@@ -133,6 +129,37 @@ function setMode(mode) {
 
 function setAmount(xrp) {
   amountInput.value = xrp;
+}
+
+document.querySelectorAll(".advanced-settings").forEach((button) => {
+  button.addEventListener("click", () => {
+    const contentWrapper = button.nextElementSibling;
+    const arrow = button.querySelector(".advanced-settings-arrow");
+
+    contentWrapper.style.display =
+      contentWrapper.style.display === "block" ? "none" : "block";
+    arrow.style.transform =
+      arrow.style.transform === "rotate(180deg)"
+        ? "rotate(0deg)"
+        : "rotate(180deg)";
+  });
+});
+
+// Ensure advanced settings are closed each time the modal is opened
+function closeAdvancedSettings() {
+  document.querySelectorAll(".advanced-settings").forEach((button) => {
+    const contentWrapper = button.nextElementSibling;
+    const arrow = button.querySelector(".advanced-settings-arrow");
+
+    contentWrapper.style.display = "none";
+    arrow.style.transform = "rotate(0deg)";
+  });
+}
+
+// Call closeAdvancedSettings when opening the modal
+function openModal() {
+  tradeModalOverlay.classList.add("active");
+  closeAdvancedSettings();
 }
 
 // Close modal when clicking outside
