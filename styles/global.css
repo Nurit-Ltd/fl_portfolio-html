@@ -604,35 +604,38 @@ body {
 }
 
 @media (max-width: 692px) {
-  .table-controls-content-wrapper {
-    /* flex-direction: column; */
-    gap: 8px;
-  }
+  .table-controls {
 
-  .controls {
-    gap: 8px !important;
-  }
+    .table-controls-content-wrapper {
+      /* flex-direction: column; */
+      gap: 8px;
+    }
 
-  .control-button {
-    height: 40px !important;
-    padding: 6px 8px !important;
-  }
+    .controls {
+      gap: 8px !important;
+    }
 
-  .wallet-drop-down-wrapper {
-    height: 40px !important;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
+    .control-button {
+      height: 40px !important;
+      padding: 6px 8px !important;
+    }
 
-  .control-button:nth-child(n + 2),
-  .wallet-drop-down-wrapper {
-    display: none !important;
-  }
+    .wallet-drop-down-wrapper {
+      height: 40px !important;
+    }
 
-  .refresh-button {
-    display: flex !important;
+
+    .control-button:nth-child(n + 2),
+    .wallet-drop-down-wrapper {
+      display: none !important;
+    }
+
+    .refresh-button {
+      display: flex !important;
+    }
   }
 }
+
 
 /* Portfolio Table Controls CSS ends here */
 
