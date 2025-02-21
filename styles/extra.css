@@ -616,7 +616,7 @@ body {
 
 .tow-table-in-one {
   height: calc(100vh - 340px);
-  overflow: hidden;
+  overflow-y: auto;
 }
 .my-pools-main {
   padding: 20px 0px;
@@ -630,6 +630,10 @@ body {
 }
 .my-pools-table {
   height: 165px;
+  overflow-y: auto;
+}
+.my-pools-table-two {
+  max-height: 432px;
   overflow-y: auto;
 }
 
