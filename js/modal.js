@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const modalTemplate = document.getElementById("modal-template");
+  const addLiquidity = document.getElementById("add-liquidity-modal");
   const actionButtons = document.querySelectorAll(".action-add-icon");
 
   actionButtons.forEach((button, index) => {
     button.addEventListener("click", function () {
-      let modalClone = modalTemplate.cloneNode(true);
+      let modalClone = addLiquidity.cloneNode(true);
       modalClone.id = `modal-${index}`;
       document.body.appendChild(modalClone);
 
