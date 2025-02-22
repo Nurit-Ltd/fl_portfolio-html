@@ -193,6 +193,10 @@
   transition: 0.3s ease-in-out;
 }
 
+.xrp.single-sided {
+  background-color: #34374a;
+}
+
 .amount-list-content > *:not(:last-child) {
   margin-bottom: 6px;
 }
