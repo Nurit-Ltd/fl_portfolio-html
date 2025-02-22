@@ -53,6 +53,22 @@
   border: 1px solid var(--border-primary);
   border-radius: 8px;
   font-size: medium;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  img {
+    margin-top: 2.5px;
+  }
+}
+.wallet-name-dropdown-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  img {
+    height: 16px;
+    margin-top: 2.5px;
+  }
 }
 
 .close-modal {
