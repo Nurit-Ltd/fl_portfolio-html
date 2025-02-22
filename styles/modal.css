@@ -108,3 +108,9 @@
 .tab-content.active {
   display: block;
 }
+
+.token-amount-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
