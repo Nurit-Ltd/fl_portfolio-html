@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FL - Portfolio</title>
   <link rel="stylesheet" href="./styles/extra.css" />
+  <link rel="stylesheet" href="./styles/modal.css" />
 </head>
 
 <body>
@@ -949,9 +950,31 @@
     </div>
 
     <!-- Tables section ends here -->
+    <!-- Modal Structure -->
+    <div class="modal" id="modal-template">
+      <div class="modal-content">
+        <span class="close-modal">
+          <img src="./public/images/close-icon.svg" alt="close icon">
+        </span>
+        <div class="modal-tabs">
+          <button class="tab-btn active" data-tab="tab1">Tab 1</button>
+          <button class="tab-btn" data-tab="tab2">Tab 2</button>
+        </div>
+        <div class="modal-body">
+          <div class="tab-content active" id="tab1">
+            <p>Content for Tab 1</p>
+          </div>
+          <div class="tab-content" id="tab2">
+            <p>Content for Tab 2</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <script src="./js/main.js"></script>
+  <script src="./js/modal.js"></script>
 </body>
 
 </html>
