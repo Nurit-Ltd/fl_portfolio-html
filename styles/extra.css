@@ -703,7 +703,6 @@ body {
 
       &:last-child {
         text-align: end;
-        /* padding-right: 16px; */
       }
     }
   }
@@ -747,7 +746,7 @@ body {
     }
   }
 
-  tbody > tr:last-child {
+  tbody>tr:last-child {
     border-bottom: 0;
   }
 
@@ -849,7 +848,7 @@ body {
     position: relative;
   }
 
-  .action-menu-wrapper {
+  .lp-action-menu-wrapper {
     position: relative;
   }
 
@@ -861,7 +860,7 @@ body {
     backdrop-filter: blur(10px);
     border-radius: 16px;
     padding: 0;
-    width: 120px;
+    width: 165px;
     overflow: hidden;
     display: none;
   }
