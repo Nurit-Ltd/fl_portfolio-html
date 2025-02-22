@@ -23,6 +23,7 @@
   --bg-danger: #f03330;
   --border-positive: #14ae5c;
   --border-danger: #ff7d6f;
+  --brand: #456eeb;
 }
 
 /* Reset CSS */
@@ -448,11 +449,16 @@ body {
       font-size: 16px;
       color: var(--text-primary);
       cursor: pointer;
+      gap: 4px;
 
       &:not(:last-child) {
         font-size: 14px;
         padding: 8px 12px;
         line-height: 1.15em;
+      }
+
+      &.add-liquidity-button {
+        background-color: var(--brand);
       }
 
       .control-button-left-icon {
@@ -674,7 +680,6 @@ body {
     flex-direction: column;
     align-items: stretch;
 
-
     tr:hover:not(:has(th)) {
       background: var(--bg-secondary) !important;
     }
@@ -742,7 +747,7 @@ body {
     }
   }
 
-  tbody>tr:last-child {
+  tbody > tr:last-child {
     border-bottom: 0;
   }
 
