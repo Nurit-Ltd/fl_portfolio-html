@@ -32,19 +32,31 @@
   position: relative;
 }
 
+.wallet-name-dropdown_wrapper {
+  position: relative;
+  display: flex;
+  gap: 12px;
+  justify-items: space-between;
+  margin-bottom: 20px;
+}
+
+.wallet-name-dropdown {
+  flex: 1;
+  padding: 7px 12px;
+  border: 1px solid var(--border-primary);
+  border-radius: 8px;
+  font-size: medium;
+}
+
 .close-modal {
-  position: absolute;
-  right: 10px;
-  top: 10px;
   cursor: pointer;
   border: 1px solid var(--border-primary);
   border-radius: 8px;
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg-secondary);
 }
 
 .modal-tabs {
