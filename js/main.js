@@ -248,19 +248,3 @@ window.addEventListener("click", (e) => {
 // History Modal
 
 // Modals
-
-function adjustHeight() {
-  const section = document.querySelector(".tow-table-in-one");
-  const distance = section.getBoundingClientRect().top + window.scrollY;
-  section.style.height = `calc(100vh - ${distance}px)`;
-}
-window.addEventListener("load", adjustHeight);
-window.addEventListener("resize", adjustHeight);
-
-function adjustHeight2() {
-  const section = document.querySelector(".my-pools-table-two");
-  const distance = section.getBoundingClientRect().top + window.scrollY;
-  section.style.height = `calc(100vh - ${distance}px)`;
-}
-window.addEventListener("load", adjustHeight);
-window.addEventListener("resize", adjustHeight);
