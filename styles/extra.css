@@ -405,6 +405,7 @@ body {
     color: var(--text-neutral-tertiary);
   }
 }
+
 @media (max-width: 768px) {
   .name-wallets {
     .user-name {
@@ -618,26 +619,31 @@ body {
   height: calc(100vh - 340px);
   overflow-y: auto;
 }
+
 .my-pools-main {
   padding: 20px 0px;
   border-top: 1px solid #3f4258;
   border-bottom: 1px solid #3f4258;
 }
+
 .best-pools-main {
   padding: 20px 0px;
 }
+
 .table-section-title {
   padding-top: 8px;
   padding-bottom: 14px;
   font-size: 20px;
   color: #f5f5f5;
 }
+
 .my-pools-table {
   height: 165px;
   overflow-y: auto;
 }
+
 .my-pools-table-two {
-  max-height: 432px;
+  max-height: calc(100vh - 680px);
   overflow-y: auto;
 }
 
@@ -667,6 +673,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+
+
+    tr:hover:not(:has(th)) {
+      background: var(--bg-secondary) !important;
+    }
   }
 
   .table-heading {
@@ -701,9 +712,11 @@ body {
   .col-span {
     column-span: 6;
   }
+
   thead tr {
     border-top: 0.5px solid var(--border-primary);
   }
+
   tr {
     border-bottom: 0.5px solid var(--border-primary);
     padding: 7px calc((100% - 1420px) / 2);
@@ -729,7 +742,7 @@ body {
     }
   }
 
-  tbody > tr:last-child {
+  tbody>tr:last-child {
     border-bottom: 0;
   }
 
