@@ -217,21 +217,21 @@
   }
 }
 
-.add-liquidity-btn {
+.modal-footer .btn {
   padding-top: 16px;
   margin-top: 28px;
   border-top: 1px solid var(--border-primary);
+}
 
-  button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 10px;
-    background: var(--brand);
-    color: var(--text-primary);
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    border: 1px solid #6f93fe;
-  }
+button.review {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: var(--brand);
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid #6f93fe;
 }

@@ -1055,73 +1055,79 @@
             </span>
           </div>
         </div>
-        <div class="modal-title">
-          <h2>Add Liquidity</h2>
-          <p>Enter token amounts for your liquidity deposit</p>
-        </div>
-        <div class="modal-tabs">
-          <button class="tab-btn active" data-tab="numeric">
-            50/50
-          </button>
-          <button class="tab-btn" data-tab="single-sided">
-            Single Sided
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="tab-content active" id="numeric">
-            <div>
-              <div class="token-amount-list">
-                <div class="xrp">
-                  <div>
-                    <h3>0</h3>
-                    <p>$0</p>
-                  </div>
-                  <div class="">
-                    <div role="button" class="xrp-btn"><span class="f-logo">F</span> <span class="xrp-text">XRP</span>
+        <div id="step-review">
+          <div class="modal-title">
+            <h2>Add Liquidity</h2>
+            <p>Enter token amounts for your liquidity deposit</p>
+          </div>
+          <div class="modal-tabs">
+            <button class="tab-btn active" data-tab="numeric">
+              50/50
+            </button>
+            <button class="tab-btn" data-tab="single-sided">
+              Single Sided
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="tab-content active" id="numeric">
+              <div>
+                <div class="token-amount-list">
+                  <div class="xrp">
+                    <div>
+                      <h3>0</h3>
+                      <p>$0</p>
                     </div>
-                    <div class="xrp-wallet">
-                      XRP
-                      <img src="./public/images/wallet-dark-icon.svg" alt="wallet" />
+                    <div class="">
+                      <div role="button" class="xrp-btn"><span class="f-logo">F</span> <span class="xrp-text">XRP</span>
+                      </div>
+                      <div class="xrp-wallet">
+                        XRP
+                        <img src="./public/images/wallet-dark-icon.svg" alt="wallet" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="xrp token">
+                    <div class="">
+                      <h3>0</h3>
+                      <p>$0,0</p>
+                    </div>
+                    <div>
+                      <div role="button" class="token-btn"><span class="f-logo">F</span> <span
+                          class="xrp-text">TOKEN</span> <img src="./public/images/chevron-down-icon.svg"
+                          alt="down-arrow">
+                      </div>
+                      <div class="token-wallet">
+                        0
+                        <img src="./public/images/wallet-dark-icon.svg" alt="wallet" />
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="xrp token">
-                  <div class="">
-                    <h3>0</h3>
-                    <p>$0,0</p>
-                  </div>
-                  <div>
-                    <div role="button" class="token-btn"><span class="f-logo">F</span> <span
-                        class="xrp-text">TOKEN</span> <img src="./public/images/chevron-down-icon.svg" alt="down-arrow">
-                    </div>
-                    <div class="token-wallet">
-                      0
-                      <img src="./public/images/wallet-dark-icon.svg" alt="wallet" />
-                    </div>
-                  </div>
-                </div>
+
+                <ul class="amount-list-content">
+                  <li class="list-item">Price Impact <img src="./public/images/info-icon-dark.svg" alt="info">
+                    <span class=list-value>0 XRP
+                      (0%)</span>
+                  </li>
+                  <li class="list-item"> <span>Share of Pool</span> <span class=list-value>≈ 0% → 0%</span></li>
+                  <li class="list-item">Voting Threshold <img src="./public/images/info-icon-dark.svg" alt="info">
+                    <span class=list-value>0K
+                      LP Tokens (0% of the Pool)</span>
+                  </li>
+                </ul>
+
+
+
               </div>
-
-              <ul class="amount-list-content">
-                <li class="list-item">Price Impact <img src="./public/images/info-icon-dark.svg" alt="info">
-                  <span class=list-value>0 XRP
-                    (0%)</span>
-                </li>
-                <li class="list-item"> <span>Share of Pool</span> <span class=list-value>≈ 0% → 0%</span></li>
-                <li class="list-item">Voting Threshold <img src="./public/images/info-icon-dark.svg" alt="info">
-                  <span class=list-value>0K
-                    LP Tokens (0% of the Pool)</span>
-                </li>
-              </ul>
-
-              <div class="add-liquidity-btn">
-                <button>Review</button>
-              </div>
-
+            </div>
+            <div class="tab-content" id="single-sided">
+              <p>Content for Tab 2</p>
             </div>
           </div>
-          <div class="tab-content" id="single-sided">
-            <p>Content for Tab 2</p>
+        </div>
+        <div class="modal-footer">
+          <div class="btn">
+            <button class="review">Review</button>
           </div>
         </div>
       </div>
