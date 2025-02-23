@@ -437,6 +437,123 @@ body {
     gap: 16px;
     width: 100%;
 
+    /* Filters Button */
+
+    .filters-button {
+      user-select: none;
+
+      img {
+        width: 20px;
+        aspect-ratio: 1;
+      }
+
+      display: flex;
+      gap: 8px;
+      padding: 10px 8px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-primary);
+      border-radius: 10px;
+      font-size: 16px;
+      line-height: 1em;
+      color: var(--text-primary);
+      cursor: pointer;
+      max-height: 40px;
+    }
+
+    /* Filters Button */
+
+    /* Filter Inner buttons */
+
+    .filter-sidebar-overlay {
+      @media (max-width:767px) {
+        z-index: 1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+
+      .filter-sidebar {
+        position: relative;
+        display: flex;
+        gap: 16px;
+
+
+        @media (max-width:767px) {
+          flex-direction: column;
+          padding: 64px 16px;
+          top: 0;
+          left: -75vw;
+          /* Sidebar off-screen */
+          width: 75vw;
+          height: 100vh;
+          background: var(--bg-secondary);
+          box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+          transition: left 0.3s ease-in-out;
+
+          .wallet-dropdown {
+            max-width: 155px;
+            width: 100%;
+
+            .dropdown-options {
+              max-width: calc(100vw - 32px);
+              overflow-x: scroll;
+
+              &::-webkit-scrollbar {
+                height: 4px !important;
+              }
+
+
+
+              input[type="checkbox"] {
+                flex: none;
+              }
+            }
+          }
+        }
+
+
+
+
+        .close-sidebar-btn {
+          position: absolute;
+          right: 24px;
+          top: 24px;
+          cursor: pointer;
+          border: 1px solid var(--border-primary);
+          height: 36px;
+          width: 36px;
+          border-radius: 8px;
+          display: none;
+          align-items: center;
+          justify-content: center;
+          user-select: none;
+
+          @media (max-width:767px) {
+            display: flex;
+          }
+        }
+      }
+
+      .filter-sidebar.active {
+        left: 0;
+      }
+    }
+
+    .filter-sidebar-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+
+    /* Filter Inner buttons */
+
+
     .control-button {
       height: 34px;
       display: flex;
@@ -451,20 +568,55 @@ body {
       cursor: pointer;
       gap: 4px;
 
-      &:not(:last-child) {
-        font-size: 14px;
-        padding: 8px 12px;
-        line-height: 1.15em;
-      }
+
 
       &.add-liquidity-button {
         background-color: var(--brand);
+        max-height: 32px;
+        outline: none;
       }
 
       .control-button-left-icon {
         height: 16px;
         width: auto;
         margin-right: 8px;
+      }
+    }
+
+    .add-liquidity-button.add-liquidity-button-mobile {
+      display: flex;
+      padding: 10px 8px;
+      font-size: 16px;
+      line-height: 1em;
+      max-height: 40px;
+      height: 40px !important;
+    }
+
+    @media (max-width:767px) {
+      .filters-button {
+        display: flex;
+      }
+
+      .add-liquidity-button {
+        display: none;
+      }
+
+      .add-liquidity-button.add-liquidity-button-mobile {
+        display: flex;
+      }
+    }
+
+    @media (min-width:768px) {
+      .filters-button {
+        display: none;
+      }
+
+      .add-liquidity-button.add-liquidity-button-mobile {
+        display: none;
+      }
+
+      .add-liquidity-button {
+        display: flex;
       }
     }
 
@@ -579,7 +731,6 @@ body {
       border-radius: 12px;
       padding: 6px 12px;
       display: flex;
-      /* gap: 8px; */
       justify-content: space-between;
       align-items: center;
       cursor: pointer;
@@ -679,19 +830,7 @@ body {
 
     /* Wallets Dropdown button */
 
-    .refresh-button {
-      height: 40px;
-      aspect-ratio: 1;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      background-color: var(--bg-secondary);
-      border-radius: 10px;
-      border: 1px solid var(--border-secondary);
-      font-size: 16px;
-      color: var(--text-primary);
-      cursor: pointer;
-    }
+
   }
 
   .table-search {
@@ -737,7 +876,6 @@ body {
 @media (max-width: 692px) {
   .table-controls {
     .table-controls-content-wrapper {
-      /* flex-direction: column; */
       gap: 8px;
     }
 
@@ -745,32 +883,36 @@ body {
       gap: 8px !important;
     }
 
-    .control-button {
-      height: 40px !important;
-      padding: 6px 8px !important;
-    }
-
-    .wallet-drop-down-wrapper {
-      height: 40px !important;
-    }
-
-    .control-button:nth-child(n + 2),
-    .wallet-drop-down-wrapper {
-      display: none !important;
-    }
-
-    .refresh-button {
-      display: flex !important;
-    }
   }
 }
 
 /* Portfolio Table Controls CSS ends here */
+
+
 /* Table section CSS starts here */
 
 .tow-table-in-one {
-  height: calc(100vh - 340px);
-  overflow-y: auto;
+
+
+  @media (max-width:1420px) {
+    height: calc(100vh - 335px);
+
+    .my-pools-table-two {
+      max-height: calc(100vh - 595px);
+      height: 100% !important;
+    }
+
+  }
+
+  @media (max-width:1420px) {
+    height: calc(100vh - 270px);
+
+    .my-pools-table-two {
+      max-height: calc(100vh - 530px);
+      height: 100% !important;
+    }
+
+  }
 }
 
 .my-pools-main {
@@ -798,6 +940,10 @@ body {
 .my-pools-table-two {
   max-height: calc(100vh - 680px);
   overflow-y: auto;
+}
+
+.my-pools-table-two .col-span {
+  padding: 12px 0px;
 }
 
 .table-section {
@@ -873,7 +1019,7 @@ body {
     padding: 7px calc((100% - 1420px) / 2);
     display: grid;
     grid-template-columns: 1fr 6fr;
-    align-items: center;
+    /* align-items: center; */
 
     td {
       .action-cell {
@@ -894,7 +1040,7 @@ body {
     }
   }
 
-  tbody > tr:last-child {
+  tbody>tr:last-child {
     border-bottom: 0;
   }
 

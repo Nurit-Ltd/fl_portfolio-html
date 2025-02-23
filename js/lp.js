@@ -134,6 +134,7 @@ const closeAllDropdowns = () => {
   customizeArrow.classList.remove("open");
   walletOptions.classList.remove("show");
   arrow.classList.remove("open");
+  applyTransform(); // Ensure wallet dropdown returns to its previous position
 };
 
 const closeAllActionMenus = () => {
@@ -145,3 +146,57 @@ const closeAllActionMenus = () => {
     menu.style.display = "none";
   });
 };
+
+// Filter Sidebar
+
+const overlay = document.querySelector(".filter-sidebar-overlay");
+const sidebar = document.querySelector(".filter-sidebar");
+const closeBtn = document.querySelector(".close-sidebar-btn");
+
+document.addEventListener("click", (e) => {
+  if (e.target.closest(".filters-button")) {
+    overlay.classList.add("active");
+    sidebar.classList.add("active");
+  }
+
+  if (e.target.closest(".close-sidebar-btn") || e.target === overlay) {
+    overlay.classList.remove("active");
+    sidebar.classList.remove("active");
+  }
+});
+
+const handleSidebarOnResize = () => {
+  const mediaQuery = window.matchMedia("(max-width: 768px)");
+  if (mediaQuery.matches) {
+    overlay.classList.remove("active");
+    sidebar.classList.remove("active");
+  }
+};
+
+window.addEventListener("resize", handleSidebarOnResize);
+
+// Filter sidebar buttons opening closing transformation
+const handleDropdownTransform = () => {
+  const mediaQuery = window.matchMedia("(max-width: 767px)");
+
+  const applyTransform = () => {
+    if (mediaQuery.matches) {
+      walletDropdown.style.transition = "transform 0.3s ease";
+      walletDropdown.style.transform = customizeOptions.classList.contains(
+        "show"
+      )
+        ? "translateY(165px)"
+        : "translateY(0)";
+    } else {
+      walletDropdown.style.transition = "";
+      walletDropdown.style.transform = "";
+    }
+  };
+
+  customizeDropdown.addEventListener("click", applyTransform);
+  window.addEventListener("resize", applyTransform);
+  return applyTransform; // Return the function so it can be used elsewhere
+};
+
+const applyTransform = handleDropdownTransform();
+handleDropdownTransform();

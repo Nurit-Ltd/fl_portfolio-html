@@ -435,6 +435,60 @@ body {
 
 /* Portfolio Header CSS ends here */
 
+.portfolio-tab-section {
+
+
+  .portfolio-tabs-wrapper {
+    color: var(--text-primary);
+    font-size: 16px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    text-align: center;
+    overflow-x: scroll;
+    padding-bottom: 4px;
+
+    &::-webkit-scrollbar {
+      height: 3px !important;
+    }
+
+    .tab {
+      padding: 8px 12px;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+      user-select: none;
+      white-space: nowrap;
+
+
+
+
+      &.active {
+        color: var(--color-darkSky);
+        border-color: var(--color-darkSky);
+
+      }
+    }
+
+
+  }
+
+  .portfolio-tab-contents-wrapper {
+    color: white;
+
+    .tab-content {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+}
+
+
+
+
 /* Portfolio Table Controls CSS starts here */
 
 .table-controls-content-wrapper {
@@ -642,7 +696,7 @@ body {
 /* Table section CSS starts here */
 
 .table-section {
-  height: calc(100vh - 340px);
+  height: calc(100vh - 385px);
   overflow-y: auto;
 
   .table-scroll {
@@ -875,6 +929,13 @@ body {
     font-size: 14px;
   }
 }
+
+@media (max-width:1200px) {
+  .table-section {
+    height: calc(100vh - 345px);
+  }
+}
+
 
 @media (max-width: 768px) {
   .table-scroll {
