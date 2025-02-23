@@ -53,6 +53,15 @@ document.addEventListener("DOMContentLoaded", function () {
             "block";
         });
       });
+
+      // ✅ Handle Cancel button clicks
+      modalClone
+        .querySelectorAll("#step-cancel")
+        .forEach((btn) => {
+          btn.addEventListener("click", function () {
+            modalClone.remove();
+          });
+        });
     });
   });
 });

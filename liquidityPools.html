@@ -1178,38 +1178,83 @@
 
         </div>
         <div id="step-confirm">
-
-          <div>
-            <div>
-              <label for="diposit">You’re Depositing</label>
-              <div>
-                <span>F</span>
-                <div>
+          <label class="label" for="diposit">You’re Depositing</label>
+          <div class="is-confirmation">
+            <div class="deposit">
+              <div class="deposit-amount">
+                <span class="f-logo">F</span>
+                <div class="deposit-amount-content">
                   <h6>0.0 TOKEN</h6>
                   <p>$0.0</p>
                 </div>
               </div>
             </div>
-            <div>
+            <div class="recive">
               <h6>0.0 XRP</h6>
               <p>$0.0</p>
             </div>
           </div>
-
-
+          <label class="label" for="diposit">You’re Receiving</label>
+          <div class="is-confirmation">
+            <div class="recive">
+              <h6>0.0 TOKEN/XRP LP Tokens</h6>
+              <p>$0.0</p>
+            </div>
+          </div>
+          <div class="amount-list">
+            <ul class="amount-list-content">
+              <li class="list-item">Price Impact <img src="./public/images/info-icon-dark.svg" alt="info">
+                <span class=list-value>0 XRP
+                  (0%)</span>
+              </li>
+              <li class="list-item"> <span>Share of Pool</span> <span class=list-value>≈ 0% → 0%</span></li>
+              <li class="list-item">Voting Threshold <img src="./public/images/info-icon-dark.svg" alt="info">
+                <span class=list-value>0K
+                  LP Tokens (0% of the Pool)</span>
+              </li>
+            </ul>
+          </div>
+          <div class="confirm-footer">
+            <button class="cancel-btn" id="step-cancel">Cancel</button>
+            <button class="confirm-btn" id="numeric-confirm">Confirm</button>
+          </div>
         </div>
         <div id="step-confirm-single-sided">
-          <div>
-            <div>
-              <label for="diposit">You’re Depositing</label>
-              <div>
-                <span>F</span>
-                <div>
+          <label class="label" for="diposit">You’re Depositing</label>
+          <div class="is-confirmation">
+            <div class="deposit">
+              <div class="deposit-amount">
+                <span class="f-logo">F</span>
+                <div class="deposit-amount-content">
                   <h6>0.0 TOKEN</h6>
                   <p>$0.0</p>
                 </div>
               </div>
             </div>
+          </div>
+          <label class="label" for="diposit">You’re Receiving</label>
+          <div class="is-confirmation">
+            <div class="recive">
+              <h6>0.0 TOKEN/XRP LP Tokens</h6>
+              <p>$0.0</p>
+            </div>
+          </div>
+          <div class="amount-list">
+            <ul class="amount-list-content">
+              <li class="list-item">Price Impact <img src="./public/images/info-icon-dark.svg" alt="info">
+                <span class=list-value>0 XRP
+                  (0%)</span>
+              </li>
+              <li class="list-item"> <span>Share of Pool</span> <span class=list-value>≈ 0% → 0%</span></li>
+              <li class="list-item">Voting Threshold <img src="./public/images/info-icon-dark.svg" alt="info">
+                <span class=list-value>0K
+                  LP Tokens (0% of the Pool)</span>
+              </li>
+            </ul>
+          </div>
+          <div class="confirm-footer">
+            <button class="cancel-btn" id="step-cancel">Cancel</button>
+            <button class="confirm-btn" id="single-sided-confirm">Confirm</button>
           </div>
         </div>
       </div>

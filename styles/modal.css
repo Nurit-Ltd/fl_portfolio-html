@@ -239,3 +239,88 @@ button.review {
   cursor: pointer;
   border: 1px solid #6f93fe;
 }
+
+/* step confirm */
+
+.label {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  display: inline-block;
+  color: #d9d9d9;
+}
+.is-confirmation {
+  color: var(--text-primary);
+  padding: 16px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border-primary);
+  margin-bottom: 16px;
+}
+
+.deposit-amount {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.deposit-amount-content h6,
+.recive h6 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.recive {
+  margin-top: 16px;
+}
+
+.deposit-amount-content p,
+.recive p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.deposit-amount .f-logo {
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #5a5a5a;
+  color: #0e0f43;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.amount-list {
+  margin-bottom: 28px;
+}
+
+.confirm-footer {
+  padding-top: 16px;
+  margin-top: 28px;
+  border-top: 1px solid var(--border-primary);
+  display: flex;
+  gap: 16px;
+
+  .cancel-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid var(--border-primary);
+  }
+
+  .confirm-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    background: var(--brand);
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid #6f93fe;
+  }
+}
