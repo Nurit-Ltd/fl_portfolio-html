@@ -497,6 +497,8 @@ body {
           transition: left 0.3s ease-in-out;
 
           .wallet-dropdown {
+            max-width: 155px;
+            width: 100%;
 
             .dropdown-options {
               max-width: calc(100vw - 32px);
