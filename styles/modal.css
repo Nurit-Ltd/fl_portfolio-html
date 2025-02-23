@@ -7,6 +7,7 @@
   --text-secondary: #757575;
   --bg-secondary: #242534;
   --border-primary: #34374a;
+  --brand-success: #85e0a3;
 }
 
 .modal {
@@ -225,6 +226,18 @@
   }
 }
 
+.list-item.green {
+  color: var(--brand-success);
+}
+
+.label.checked {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: var(--brand-success);
+}
+
 .modal-footer .btn {
   padding-top: 16px;
   margin-top: 28px;
@@ -304,7 +317,8 @@ button.review {
   display: flex;
   gap: 16px;
 
-  .cancel-btn {
+  .cancel-btn,
+  .done-btn {
     width: 100%;
     padding: 12px;
     border-radius: 10px;
@@ -316,7 +330,8 @@ button.review {
     border: 1px solid var(--border-primary);
   }
 
-  .confirm-btn {
+  .confirm-btn,
+  .vote-btn {
     width: 100%;
     padding: 12px;
     border-radius: 10px;
@@ -332,18 +347,21 @@ button.review {
     gap: 8px;
 
     .loading-icon,
-    .loading-icon-single-sided {
+    .loading-icon-single-sided,
+    .loading-cion-vote {
       width: 1rem;
       height: 1rem;
       margin-top: 2px;
     }
   }
 
-  .confirm-btn.is-loading {
+  .confirm-btn.is-loading,
+  .vote-btn.is-loading {
     background-color: #6f93fe;
   }
 
-  .cancel-btn.is-loading {
+  .cancel-btn.is-loading,
+  .vote-btn.is-loading {
     background-color: #34374a;
   }
 }

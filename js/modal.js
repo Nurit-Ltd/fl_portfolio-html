@@ -29,6 +29,16 @@ document.addEventListener("DOMContentLoaded", function () {
         .addEventListener("click", function () {
           modalClone.remove();
         });
+      modalClone
+        .querySelector("#step-numeric-done")
+        .addEventListener("click", function () {
+          modalClone.remove();
+        });
+      modalClone
+        .querySelector("#step-done-single-sided-btn")
+        .addEventListener("click", function () {
+          modalClone.remove();
+        });
 
       // Handle tab switching
       const tabButtons = modalClone.querySelectorAll(".tab-btn");
@@ -72,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // ✅ Handle confirm loading (apply loading class to all buttons individually)
       const buttonsToLoad = modalClone.querySelectorAll(
-        "#step-confirm, #step-confirm-single-sided"
+        "#step-confirm, #step-confirm-single-sided, .cancel-btn, .close-modal"
       );
 
       buttonsToLoad.forEach((btn) => {
