@@ -436,8 +436,6 @@ body {
 /* Portfolio Header CSS ends here */
 
 .portfolio-tab-section {
-
-
   .portfolio-tabs-wrapper {
     color: var(--text-primary);
     font-size: 16px;
@@ -449,7 +447,7 @@ body {
     padding-bottom: 4px;
 
     &::-webkit-scrollbar {
-      height: 3px !important;
+      display: none;
     }
 
     .tab {
@@ -460,17 +458,11 @@ body {
       user-select: none;
       white-space: nowrap;
 
-
-
-
       &.active {
         color: var(--color-darkSky);
         border-color: var(--color-darkSky);
-
       }
     }
-
-
   }
 
   .portfolio-tab-contents-wrapper {
@@ -485,9 +477,6 @@ body {
     }
   }
 }
-
-
-
 
 /* Portfolio Table Controls CSS starts here */
 
@@ -550,10 +539,7 @@ body {
       height: 100%;
       width: 100%;
       padding: 0px 8px;
-
     }
-
-
 
     .wallet-select::after {
       content: url(../public/images/chevron-down-icon.svg);
@@ -566,7 +552,6 @@ body {
       pointer-events: none;
       height: 16px;
       transition: all 0.3s ease;
-
     }
 
     .wallet-select.open::after {
@@ -592,15 +577,10 @@ body {
       padding: 4px 8px;
     }
 
-
-
     select option {
       background-color: var(--bg-secondary);
       color: var(--text-primary);
     }
-
-
-
 
     .refresh-button {
       height: 40px;
@@ -659,7 +639,6 @@ body {
 
 @media (max-width: 692px) {
   .table-controls {
-
     .table-controls-content-wrapper {
       /* flex-direction: column; */
       gap: 8px;
@@ -678,7 +657,6 @@ body {
       height: 40px !important;
     }
 
-
     .control-button:nth-child(n + 2),
     .wallet-drop-down-wrapper {
       display: none !important;
@@ -689,7 +667,6 @@ body {
     }
   }
 }
-
 
 /* Portfolio Table Controls CSS ends here */
 
@@ -784,7 +761,7 @@ body {
     }
   }
 
-  tbody>tr:last-child {
+  tbody > tr:last-child {
     border-bottom: 0;
   }
 
@@ -930,12 +907,11 @@ body {
   }
 }
 
-@media (max-width:1200px) {
+@media (max-width: 1200px) {
   .table-section {
     height: calc(100vh - 345px);
   }
 }
-
 
 @media (max-width: 768px) {
   .table-scroll {
@@ -1326,11 +1302,11 @@ body {
       transition: 0.4s;
     }
 
-    input:checked+.toggle-thumb {
+    input:checked + .toggle-thumb {
       background-color: #456eeb;
     }
 
-    input:checked+.toggle-thumb:before {
+    input:checked + .toggle-thumb:before {
       transform: translate(10%, -50%);
       background-color: #0e0f43;
     }
@@ -1375,12 +1351,11 @@ body {
     }
   }
 
-  @media (max-width:692px) {
+  @media (max-width: 692px) {
     .preset {
       flex-direction: column;
       align-items: start !important;
     }
-
   }
 }
 
