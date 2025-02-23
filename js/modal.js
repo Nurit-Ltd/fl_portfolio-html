@@ -7,8 +7,12 @@ document.addEventListener("DOMContentLoaded", function () {
       let modalClone = addLiquidity.cloneNode(true);
       modalClone.id = `modal-${index}`;
       document.body.appendChild(modalClone);
-
       modalClone.style.display = "flex";
+
+      // Hide step-confirm initially
+      modalClone.querySelector("#step-confirm").style.display = "none";
+      modalClone.querySelector("#step-confirm-single-sided").style.display =
+        "none";
 
       // Handle closing modal
       modalClone
@@ -30,6 +34,23 @@ document.addEventListener("DOMContentLoaded", function () {
           modalClone
             .querySelector(`#${this.dataset.tab}`)
             .classList.add("active");
+        });
+      });
+
+      // ✅ Handle Review button clicks
+      modalClone.querySelectorAll(".review").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          modalClone.querySelector("#step-review").style.display = "none";
+          modalClone.querySelector("#step-confirm").style.display = "block";
+        });
+      });
+
+      modalClone.querySelectorAll(".review-single-sided").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          modalClone.querySelector("#step-review").style.display = "none";
+          modalClone.querySelector("#step-confirm").style.display = "none";
+          modalClone.querySelector("#step-confirm-single-sided").style.display =
+            "block";
         });
       });
     });

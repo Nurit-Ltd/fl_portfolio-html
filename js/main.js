@@ -181,11 +181,13 @@ function openModal() {
 }
 
 // Close modal when clicking outside
-tradeModalOverlay.addEventListener("click", (e) => {
-  if (e.target === tradeModalOverlay) {
-    closeModal();
-  }
-});
+if (tradeModalOverlay) {
+  tradeModalOverlay.addEventListener("click", function (event) {
+    if (!event.target.closest(".trade-modal")) {
+      closeModal();
+    }
+  });
+}
 
 // Trade Modal
 
