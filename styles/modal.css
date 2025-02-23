@@ -7,6 +7,7 @@
   --text-secondary: #757575;
   --bg-secondary: #242534;
   --border-primary: #34374a;
+  --brand-success: #85e0a3;
 }
 
 .modal {
@@ -80,6 +81,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.close-modal.is-loading {
+  background-color: #34374a;
 }
 
 .modal-title {
@@ -221,6 +226,18 @@
   }
 }
 
+.list-item.green {
+  color: var(--brand-success);
+}
+
+.label.checked {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: var(--brand-success);
+}
+
 .modal-footer .btn {
   padding-top: 16px;
   margin-top: 28px;
@@ -238,4 +255,113 @@ button.review {
   font-weight: 500;
   cursor: pointer;
   border: 1px solid #6f93fe;
+}
+
+/* step confirm */
+
+.label {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  display: inline-block;
+  color: #d9d9d9;
+}
+.is-confirmation {
+  color: var(--text-primary);
+  padding: 16px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border-primary);
+  margin-bottom: 16px;
+}
+
+.deposit-amount {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.deposit-amount-content h6,
+.recive h6 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.recive {
+  margin-top: 16px;
+}
+
+.deposit-amount-content p,
+.recive p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.deposit-amount .f-logo {
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #5a5a5a;
+  color: #0e0f43;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.amount-list {
+  margin-bottom: 28px;
+}
+
+.confirm-footer {
+  padding-top: 16px;
+  margin-top: 28px;
+  border-top: 1px solid var(--border-primary);
+  display: flex;
+  gap: 16px;
+
+  .cancel-btn,
+  .done-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid var(--border-primary);
+  }
+
+  .confirm-btn,
+  .vote-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    background-color: var(--brand);
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid #6f93fe;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    .loading-icon,
+    .loading-icon-single-sided,
+    .loading-cion-vote {
+      width: 1rem;
+      height: 1rem;
+      margin-top: 2px;
+    }
+  }
+
+  .confirm-btn.is-loading,
+  .vote-btn.is-loading {
+    background-color: #6f93fe;
+  }
+
+  .cancel-btn.is-loading,
+  .vote-btn.is-loading {
+    background-color: #34374a;
+  }
 }
