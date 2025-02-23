@@ -1,3 +1,25 @@
+// Portfolio Tab Section
+
+const portfolioTabsWrapper = document.querySelector(".portfolio-tabs-wrapper");
+const portfolioTabs = [...portfolioTabsWrapper.children];
+const portfolioTabContentsWrapper = document.querySelector(
+  ".portfolio-tab-contents-wrapper"
+);
+const portfolioTabContents = [...portfolioTabContentsWrapper.children];
+
+const setActiveTab = (index) => {
+  portfolioTabs.forEach((tab, i) => {
+    tab.classList.toggle("active", i === index);
+    portfolioTabContents[i].classList.toggle("active", i === index);
+  });
+};
+
+portfolioTabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => setActiveTab(index));
+});
+
+setActiveTab(0); // Activate the first tab by default
+
 // Table Multiple wallet Open Close
 
 let multiWallet = document.getElementsByClassName("multi-wallet");
