@@ -1,14 +1,8 @@
 // Table Action menu
 
 document.addEventListener("DOMContentLoaded", () => {
-  const actionMenu = document.createElement("div");
-  actionMenu.className = "action-menu";
+  const actionMenu = document.querySelector(".action-menu");
   actionMenu.style.display = "none";
-
-  actionMenu.innerHTML = `
-<a class="add-liquidity-button" href="#">Add Liquidity</a>
-<a class="remove-liquidity-button" href="#">Remove Liquidity</a>
-<a class="vote-for-fees-button" href="#">Vote for Fees</a>`;
 
   const actionMenuWrappers = document.querySelectorAll(
     ".lp-action-menu-wrapper"
