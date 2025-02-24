@@ -739,7 +739,7 @@ body {
       text-overflow: ellipsis;
       background: var(--bg-secondary);
       font-size: 14px;
-      color: white;
+      color: var(--text-primary);
       gap: 8px;
 
       .arrow-icon {

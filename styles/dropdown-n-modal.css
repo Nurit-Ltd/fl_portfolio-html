@@ -1,0 +1,248 @@
+.modal-wallet-dropdown {
+    position: relative;
+    /* max-width: 131px; */
+    width: 100%;
+    border: 1px solid var(--border-secondary);
+    border-radius: 12px;
+    padding: 6px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background: var(--bg-secondary);
+    font-size: 14px;
+    color: white;
+    gap: 8px;
+}
+
+.modal-arrow-icon {
+    transition: transform 0.3s ease;
+    display: flex;
+}
+
+.modal-wallet-icon {
+    display: flex;
+}
+
+.modal-wallet-icon img {
+    width: 18px;
+    aspect-ratio: 1;
+}
+
+.modal-arrow-icon.open {
+    transform: rotate(180deg);
+}
+
+.modal-dropdown-options {
+    display: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    width: 100%;
+    border: 1px solid var(--border-secondary);
+    border-radius: 12px;
+    background: var(--bg-secondary);
+    flex-direction: column;
+}
+
+.modal-dropdown-options.show {
+    display: flex;
+}
+
+.modal-option {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.modal-wallet-name-address {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.modal-wallet-address {
+    color: var(--white-70p);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.modal-option input[type="checkbox"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #1f3ccd;
+    border-radius: 4px;
+    position: relative;
+    margin-right: 5px;
+    cursor: pointer;
+    flex: none;
+}
+
+.modal-option input[type="checkbox"]:checked {
+    background-color: var(--brand);
+    border: none;
+}
+
+.modal-option input[type="checkbox"]:checked::after {
+    content: "";
+    background: url("/public/images/check-mark.svg");
+    background-size: 75%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    font-size: 12px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#modal-selected-option {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+}
+
+
+
+
+
+
+
+
+/* Modal */
+
+.select-token-list-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    .select-token-list-modal {
+        background: #242534;
+        max-width: 500px;
+        width: 100%;
+        height: 100%;
+        max-height: 625px;
+        padding: 24px 32px 0 24px;
+        border-radius: 12px;
+        color: #f5f5f5;
+        display: flex;
+        gap: 32px;
+        flex-direction: column;
+    }
+
+    .modal-header {
+        gap: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #242534;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    .modal-header .modal-title {
+        font-size: 20px;
+        font-weight: 400;
+        border-bottom: 1px solid #34374a;
+        flex: 1;
+        padding: 8px 0;
+    }
+
+    .modal-header .token-list-modal-close-btn {
+        background: none;
+        border: none;
+        color: #f5f5f5;
+        font-size: 18px;
+        cursor: pointer;
+        height: 40px;
+        width: 40px;
+        border: 1px solid #34374a;
+        background: #242534;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .token-lists {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        overflow-y: auto;
+        flex: 1;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .list-title {
+        color: #d9d9d9;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 16px;
+        font-weight: 400;
+        padding-bottom: 4px;
+        position: sticky;
+        top: 0;
+        background: #242534;
+    }
+
+    .token-item {
+        display: flex;
+        align-items: center;
+        padding: 12px 0;
+        cursor: pointer;
+        gap: 8px;
+    }
+
+    .token-icon {
+        img {
+            height: 40px;
+            width: 40px;
+            border-radius: 999px;
+            object-fit: cover;
+        }
+    }
+
+    .token-details {
+        flex: 1;
+    }
+
+    .token-name,
+    .total-token {
+        margin: 0;
+        color: #f5f5f5;
+        font-size: 24px;
+        line-height: 1em;
+    }
+
+    .token-issuer,
+    .token-price {
+        margin: 0;
+        font-size: 14px;
+        color: #757575;
+    }
+
+    .token-values {
+        text-align: right;
+    }
+}
+
+
+
+/* Modal */
