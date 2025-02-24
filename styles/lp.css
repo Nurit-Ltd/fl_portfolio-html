@@ -1159,8 +1159,9 @@ body {
     display: none;
   }
 
-  .action-menu a {
+  .action-menu button {
     display: flex;
+    width: 100%;
     justify-content: center;
     color: var(--text-primary);
     padding: 8px 16px;
@@ -1168,9 +1169,13 @@ body {
     font-size: 16px;
     font-weight: 300;
     transition: background 0.2s;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: transparent;
   }
 
-  .action-menu a:hover {
+  .action-menu button:hover {
     background: rgba(111, 147, 254, 0.2);
   }
 
