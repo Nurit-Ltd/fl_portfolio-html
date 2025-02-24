@@ -46,6 +46,8 @@ document.addEventListener("DOMContentLoaded", function () {
         ".select-token-list-modal-content"
       ); // Assuming a content wrapper
 
+      const tokenOptions = document.querySelectorAll(".token-item");
+
       const closeTokenListModal = () => {
         tokenListModalOverlay.style.display = "none";
       };
@@ -74,11 +76,13 @@ document.addEventListener("DOMContentLoaded", function () {
           button.addEventListener("click", openTokenListModal);
         });
 
-        if (tokenListModalContent) {
-          tokenListModalContent.addEventListener("click", (event) => {
+        tokenOptions.forEach((btn) => {
+          console.log(btn);
+          btn.addEventListener("click", function (event) {
             event.stopPropagation();
+            closeTokenListModal();
           });
-        }
+        });
       }
 
       // wallet select
