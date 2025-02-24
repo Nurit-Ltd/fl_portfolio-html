@@ -33,6 +33,95 @@ document.addEventListener("DOMContentLoaded", function () {
       modalClone.querySelector(".loading-icon-single-sided").style.display =
         "none";
 
+      // token select
+      const tokenListModalOverlay = document.querySelector(
+        ".select-token-list-modal-overlay"
+      );
+      const tokenListModalCloseButton = document.querySelector(
+        ".token-list-modal-close-btn"
+      );
+      const changeTokenButton =
+        modalClone.querySelectorAll(".change-token-btn");
+      const tokenListModalContent = document.querySelector(
+        ".select-token-list-modal-content"
+      ); // Assuming a content wrapper
+
+      const closeTokenListModal = () => {
+        tokenListModalOverlay.style.display = "none";
+      };
+
+      const openTokenListModal = () => {
+        tokenListModalOverlay.style.display = "flex";
+      };
+
+      if (
+        tokenListModalOverlay &&
+        tokenListModalCloseButton &&
+        changeTokenButton
+      ) {
+        tokenListModalOverlay.addEventListener("click", (event) => {
+          if (event.target === tokenListModalOverlay) {
+            closeTokenListModal();
+          }
+        });
+
+        tokenListModalCloseButton.addEventListener("click", (event) => {
+          event.stopPropagation();
+          closeTokenListModal();
+        });
+
+        changeTokenButton.forEach((button) => {
+          button.addEventListener("click", openTokenListModal);
+        });
+
+        if (tokenListModalContent) {
+          tokenListModalContent.addEventListener("click", (event) => {
+            event.stopPropagation();
+          });
+        }
+      }
+
+      // wallet select
+      const walletDropdown = modalClone.querySelectorAll(
+        ".modal-wallet-dropdown"
+      );
+      const walletOptions = modalClone.querySelectorAll(
+        ".modal-dropdown-options"
+      );
+
+      walletDropdown.forEach((btn) => {
+        btn.addEventListener("click", function (event) {
+          // Prevent the dropdown from closing if the click is inside the dropdown options
+          if (!event.target.closest(".modal-dropdown-options")) {
+            walletOptions.forEach((option) => {
+              option.classList.toggle("show");
+            });
+          }
+        });
+      });
+
+      // Add event listener to each modal-option
+      const modalOptions = modalClone.querySelectorAll(".modal-option");
+      modalOptions.forEach((option) => {
+        option.addEventListener("click", function () {
+          const selectedWalletName =
+            option.querySelector(".modal-wallet-name").textContent;
+          const selectedOptionElement = modalClone.querySelector(
+            "#modal-selected-option"
+          );
+
+          // Update the selected option text
+          selectedOptionElement.textContent = selectedWalletName;
+
+          // Close the dropdown options
+          walletOptions.forEach((option) => {
+            option.classList.remove("show");
+          });
+        });
+      });
+
+      // if outside the dropdown, close it
+
       // Handle closing modal
       modalClone
         .querySelector(".close-modal")
@@ -263,6 +352,45 @@ document.addEventListener("DOMContentLoaded", function () {
         .addEventListener("click", function () {
           modalClone.remove();
         });
+
+      // wallet dropdown
+      const walletDropdown = modalClone.querySelectorAll(
+        ".modal-wallet-dropdown"
+      );
+      const walletOptions = modalClone.querySelectorAll(
+        ".modal-dropdown-options"
+      );
+
+      walletDropdown.forEach((btn) => {
+        btn.addEventListener("click", function (event) {
+          // Prevent the dropdown from closing if the click is inside the dropdown options
+          if (!event.target.closest(".modal-dropdown-options")) {
+            walletOptions.forEach((option) => {
+              option.classList.toggle("show");
+            });
+          }
+        });
+      });
+
+      // Add event listener to each modal-option
+      const modalOptions = modalClone.querySelectorAll(".modal-option");
+      modalOptions.forEach((option) => {
+        option.addEventListener("click", function () {
+          const selectedWalletName =
+            option.querySelector(".modal-wallet-name").textContent;
+          const selectedOptionElement = modalClone.querySelector(
+            "#modal-selected-option"
+          );
+
+          // Update the selected option text
+          selectedOptionElement.textContent = selectedWalletName;
+
+          // Close the dropdown options
+          walletOptions.forEach((option) => {
+            option.classList.remove("show");
+          });
+        });
+      });
 
       // Handle tab switching
       const tabButtons = modalClone.querySelectorAll(".tab-btn");
