@@ -166,3 +166,119 @@
   font-weight: 400;
   margin: 0;
 }
+
+/* ------------withdrawal amount-------- */
+.withdrawal-amount-main {
+  padding: 16px 12px;
+  border: 1px solid #34374a;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.withdrawal-text {
+  font-size: 16px;
+  line-height: 19px;
+  color: #d9d9d9;
+  font-weight: 400;
+  margin: 0;
+}
+.withdraw-amount-text {
+  color: #757575;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 57px;
+  text-align: center;
+  margin: 0;
+}
+.percentage-all-button {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.each-percentage-button {
+  width: 100%;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #242534;
+  border: 1px solid #34374a;
+  color: #f5f5f5;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.all-transition-info {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 4px 0px;
+}
+.double-impact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.single-in-double-impact {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.info-subject-text {
+  font-size: 16px;
+  line-height: 19px;
+  color: #757575;
+  font-weight: 400;
+  margin: 0;
+}
+.info-tooltip {
+  position: relative !important;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 8px;
+  background: #fff;
+  color: #757575;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  visibility: hidden;
+  opacity: 0;
+  min-width: 220px;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 10;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
+}
+
+.info-icon:hover + .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.info-value-text {
+  font-size: 16px;
+  line-height: 19px;
+  color: #f5f5f5;
+  font-weight: 400;
+  margin: 0;
+}

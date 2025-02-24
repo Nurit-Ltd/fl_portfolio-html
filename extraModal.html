@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./styles/extra.css" />
   </head>
   <body>
-    <div style="display: flex; gap: 80px">
+    <div style="display: flex; gap: 20px">
       <!-- Current Vote modal -->
       <div class="extra-modal-content">
         <div class="vote-full-container">
@@ -165,6 +165,62 @@
               <p class="pool-fee-text">Pool Fee Change</p>
               <p class="pool-fee-value">0.0% → 0.0%</p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Withdrawal Amount -->
+      <div class="extra-modal-content">
+        <div class="withdrawal-amount-main">
+          <p class="withdrawal-text">Withdrawal Amount</p>
+          <p class="withdraw-amount-text">0%</p>
+          <div class="percentage-all-button">
+            <button type="button" class="each-percentage-button">25%</button>
+            <button type="button" class="each-percentage-button">50%</button>
+            <button type="button" class="each-percentage-button">75%</button>
+            <button type="button" class="each-percentage-button">100%</button>
+          </div>
+        </div>
+        <div class="all-transition-info">
+          <div class="double-impact">
+            <div class="single-in-double-impact">
+              <p class="info-subject-text">Price Impact</p>
+              <div class="info-tooltip" id="tooltip-1">
+                <img
+                  src="/public/images/info-icon-dark.svg"
+                  alt="info-icon-dark"
+                  class="info-icon"
+                  data-tooltip="This is the price impact tooltip. This is the price impact tooltip."
+                />
+              </div>
+            </div>
+            <p class="info-value-text">0 XRP (0%)</p>
+          </div>
+          <div class="double-impact">
+            <p class="info-subject-text">Expected TOKEN</p>
+            <p class="info-value-text">0 (0 → 0)</p>
+          </div>
+          <div class="double-impact">
+            <p class="info-subject-text">Expected XRP</p>
+            <p class="info-value-text">0 (0 → 0)</p>
+          </div>
+          <div class="double-impact">
+            <p class="info-subject-text">Share of Pool</p>
+            <p class="info-value-text">≈ 0% → 0%</p>
+          </div>
+          <div class="double-impact">
+            <div class="single-in-double-impact">
+              <p class="info-subject-text">Voting Threshold</p>
+              <div class="info-tooltip" id="tooltip-2">
+                <img
+                  src="/public/images/info-icon-dark.svg"
+                  alt="info-icon-dark"
+                  class="info-icon"
+                  data-tooltip="This is the Voting Threshold"
+                />
+              </div>
+            </div>
+            <p class="info-value-text">0K LP Tokens (0% of the Pool)</p>
           </div>
         </div>
       </div>
