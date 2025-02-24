@@ -633,3 +633,24 @@ button.review {
   font-weight: 400;
   margin: 0;
 }
+
+.rm-xrp-token {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  border-radius: 12px;
+  border: 1px solid var(--border-primary);
+  button {
+    background-color: #242534;
+    color: #757575;
+    border: none;
+    padding: 6px;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  button.active {
+    background-color: var(--brand);
+    color: var(--text-primary);
+  }
+}
