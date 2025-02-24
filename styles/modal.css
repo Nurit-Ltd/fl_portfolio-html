@@ -361,7 +361,7 @@ button.review {
   }
 
   .cancel-btn.is-loading,
-  .vote-btn.is-loading {
+  .done-btn.is-loading {
     background-color: #34374a;
   }
 }
