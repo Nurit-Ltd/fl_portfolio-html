@@ -236,7 +236,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  cursor: pointer;
+  /* cursor: pointer; */
   color: var(--brand-success);
 }
 
@@ -594,7 +594,10 @@ button.review:hover {
 }
 .info-tooltip {
   position: relative !important;
-  padding-top: 4px;
+  /* padding-top: 4px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .tooltip {
