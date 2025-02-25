@@ -6,7 +6,7 @@ function toggleContent(element) {
   subContent.classList.toggle("visible");
 
   const icon = element.querySelector(".down-arrow-icon");
-  icon.classList.toggle("rotated");
+  // icon.classList.toggle("rotated");
 }
 Array.from(multiWallet).forEach((wallet) => {
   wallet.addEventListener("click", function () {

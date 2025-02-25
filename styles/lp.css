@@ -465,7 +465,7 @@ body {
     /* Filter Inner buttons */
 
     .filter-sidebar-overlay {
-      @media (max-width:767px) {
+      @media (max-width: 767px) {
         z-index: 1;
         position: fixed;
         top: 0;
@@ -483,8 +483,7 @@ body {
         display: flex;
         gap: 16px;
 
-
-        @media (max-width:767px) {
+        @media (max-width: 767px) {
           flex-direction: column;
           padding: 64px 16px;
           top: 0;
@@ -508,17 +507,12 @@ body {
                 height: 4px !important;
               }
 
-
-
               input[type="checkbox"] {
                 flex: none;
               }
             }
           }
         }
-
-
-
 
         .close-sidebar-btn {
           position: absolute;
@@ -534,7 +528,7 @@ body {
           justify-content: center;
           user-select: none;
 
-          @media (max-width:767px) {
+          @media (max-width: 767px) {
             display: flex;
           }
         }
@@ -550,9 +544,7 @@ body {
       visibility: visible;
     }
 
-
     /* Filter Inner buttons */
-
 
     .control-button {
       height: 34px;
@@ -567,8 +559,6 @@ body {
       color: var(--text-primary);
       cursor: pointer;
       gap: 4px;
-
-
 
       &.add-liquidity-button {
         background-color: var(--brand);
@@ -592,7 +582,7 @@ body {
       height: 40px !important;
     }
 
-    @media (max-width:767px) {
+    @media (max-width: 767px) {
       .filters-button {
         display: flex;
       }
@@ -606,7 +596,7 @@ body {
       }
     }
 
-    @media (min-width:768px) {
+    @media (min-width: 768px) {
       .filters-button {
         display: none;
       }
@@ -655,7 +645,7 @@ body {
       }
 
       .arrow-icon.open {
-        transform: rotate(180deg);
+        /* transform: rotate(180deg); */
       }
 
       .dropdown-options {
@@ -757,7 +747,7 @@ body {
       }
 
       .arrow-icon.open {
-        transform: rotate(180deg);
+        /* transform: rotate(180deg); */
       }
 
       .dropdown-options {
@@ -829,8 +819,6 @@ body {
     }
 
     /* Wallets Dropdown button */
-
-
   }
 
   .table-search {
@@ -882,36 +870,30 @@ body {
     .controls {
       gap: 8px !important;
     }
-
   }
 }
 
 /* Portfolio Table Controls CSS ends here */
 
-
 /* Table section CSS starts here */
 
 .tow-table-in-one {
-
-
-  @media (max-width:1420px) {
+  @media (max-width: 1420px) {
     height: calc(100vh - 335px);
 
     .my-pools-table-two {
       max-height: calc(100vh - 595px);
       height: 100% !important;
     }
-
   }
 
-  @media (max-width:1420px) {
+  @media (max-width: 1420px) {
     height: calc(100vh - 270px);
 
     .my-pools-table-two {
       max-height: calc(100vh - 530px);
       height: 100% !important;
     }
-
   }
 }
 
@@ -1040,7 +1022,7 @@ body {
     }
   }
 
-  tbody>tr:last-child {
+  tbody > tr:last-child {
     border-bottom: 0;
   }
 
@@ -1082,7 +1064,7 @@ body {
     }
 
     .down-arrow-icon.rotated {
-      transform: rotate(180deg);
+      /* transform: rotate(180deg); */
     }
   }
 
