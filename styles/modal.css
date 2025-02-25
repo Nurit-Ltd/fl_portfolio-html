@@ -146,10 +146,10 @@
   margin-bottom: 16px;
 
   .xrp {
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 20px; */
     color: var(--text-secondary);
     background-color: #161721;
     border: 1px solid var(--border-primary);
@@ -187,10 +187,36 @@
       filter: invert(43%) sepia(77%) saturate(15%) hue-rotate(340deg)
         brightness(90%) contrast(83%);
     }
-    .token-wallet,
-    .xrp-wallet {
-      text-align: right;
-    }
+  }
+
+  /* new added  */
+  .xrp-top-part {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .xrp-input-part {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .xrp-wallet {
+    padding: 6px 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    color: #757575;
+  }
+  .wallet-input {
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    color: #757575;
   }
 }
 
