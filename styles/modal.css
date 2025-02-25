@@ -118,6 +118,8 @@
   color: var(--text-secondary);
   width: 100%;
   height: 40px;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .tab-btn.active {
@@ -125,9 +127,9 @@
   color: var(--text-primary);
   border-radius: 32px;
 }
-.tab-btn.active:hover {
+/* .tab-btn.active:hover {
   background: green;
-}
+} */
 
 .tab-content {
   display: none;
@@ -144,10 +146,10 @@
   margin-bottom: 16px;
 
   .xrp {
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 20px; */
     color: var(--text-secondary);
     background-color: #161721;
     border: 1px solid var(--border-primary);
@@ -185,10 +187,36 @@
       filter: invert(43%) sepia(77%) saturate(15%) hue-rotate(340deg)
         brightness(90%) contrast(83%);
     }
-    .token-wallet,
-    .xrp-wallet {
-      text-align: right;
-    }
+  }
+
+  /* new added  */
+  .xrp-top-part {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .xrp-input-part {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .xrp-wallet {
+    padding: 6px 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    color: #757575;
+  }
+  .wallet-input {
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    color: #757575;
   }
 }
 
@@ -234,7 +262,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  cursor: pointer;
+  /* cursor: pointer; */
   color: var(--brand-success);
 }
 
@@ -255,6 +283,9 @@ button.review {
   font-weight: 500;
   cursor: pointer;
   border: 1px solid #6f93fe;
+}
+button.review:hover {
+  background: #0838c9;
 }
 
 /* step confirm */
@@ -372,6 +403,7 @@ button.review {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  min-height: 449px;
 }
 .heading-vote {
   display: flex;
@@ -589,6 +621,10 @@ button.review {
 }
 .info-tooltip {
   position: relative !important;
+  /* padding-top: 4px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .tooltip {
@@ -597,17 +633,18 @@ button.review {
   left: 50%;
   transform: translateX(-50%);
   margin-bottom: 8px;
-  background: #fff;
+  background: #f5f5f5;
   color: #757575;
-  padding: 6px 10px;
+  padding: 10px;
   font-size: 14px;
   border-radius: 4px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   visibility: hidden;
   opacity: 0;
-  min-width: 220px;
+  min-width: 200px;
   transition: opacity 0.2s ease-in-out;
   z-index: 10;
+  text-align: center;
 }
 
 .tooltip::after {
@@ -691,7 +728,7 @@ button.review {
 }
 
 .modal-arrow-icon.open {
-  transform: rotate(180deg);
+  /* transform: rotate(180deg); */
 }
 
 .modal-dropdown-options {
