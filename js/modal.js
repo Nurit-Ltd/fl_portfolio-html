@@ -16,7 +16,9 @@ document.addEventListener("DOMContentLoaded", function () {
       modalClone.style.display = "flex";
 
       // xrp background color changed
-      const inputs = modalClone.querySelectorAll(".wallet-input,.xrp-input-payment");
+      const inputs = modalClone.querySelectorAll(
+        ".wallet-input,.xrp-input-payment"
+      );
       const xrpContainers = modalClone.querySelectorAll(".xrp");
 
       inputs.forEach((input) => {
@@ -96,9 +98,27 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         tokenOptions.forEach((btn) => {
-          console.log(btn);
           btn.addEventListener("click", function (event) {
             event.stopPropagation();
+
+            // Find the closest `.token-item` (in case event is triggered from a child element)
+            const tokenItem = event.currentTarget;
+
+            // Find the `.token-name` inside this `.token-item`
+            const tokenNameElement = tokenItem.querySelector(".token-name");
+
+            if (tokenNameElement) {
+              const tokenName = tokenNameElement.textContent;
+
+              // Set the text of `.token-btn-txt`
+              const tokenBtnTxt = modalClone.querySelector(".token-btn-txt");
+              if (tokenBtnTxt) {
+                tokenBtnTxt.innerText = tokenName;
+              }
+
+              console.log("Token Name Set To:", tokenName);
+            }
+
             closeTokenListModal();
           });
         });
