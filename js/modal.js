@@ -29,7 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         input.addEventListener("blur", function () {
           setTimeout(() => {
-            if (!document.querySelector(".wallet-input:focus")) {
+            if (!document.querySelector(".wallet-input:focus") && 
+                !document.querySelector(".xrp-input-payment:focus")) {
               xrpContainers.forEach((xrp) => xrp.classList.remove("active"));
             }
           }, 50);
