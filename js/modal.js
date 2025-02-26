@@ -15,6 +15,25 @@ document.addEventListener("DOMContentLoaded", function () {
       document.body.appendChild(modalClone);
       modalClone.style.display = "flex";
 
+      // xrp background color changed
+      const inputs = modalClone.querySelectorAll(".wallet-input,.xrp-input-payment");
+      const xrpContainers = modalClone.querySelectorAll(".xrp");
+
+      inputs.forEach((input) => {
+        input.addEventListener("focus", function () {
+          xrpContainers.forEach((xrp) => xrp.classList.remove("active"));
+          this.closest(".xrp").classList.add("active");
+        });
+
+        input.addEventListener("blur", function () {
+          setTimeout(() => {
+            if (!document.querySelector(".wallet-input:focus")) {
+              xrpContainers.forEach((xrp) => xrp.classList.remove("active"));
+            }
+          }, 50);
+        });
+      });
+
       // Hide steps initially
       modalClone.querySelector("#step-confirm").style.display = "none";
       modalClone.querySelector("#step-confirm-single-sided").style.display =

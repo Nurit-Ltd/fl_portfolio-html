@@ -139,6 +139,8 @@
   display: block;
 }
 
+/* ----------------------XRP Token Start ----- */
+
 .token-amount-list {
   display: flex;
   flex-direction: column;
@@ -151,7 +153,9 @@
     align-items: center;
     gap: 20px; */
     color: var(--text-secondary);
-    background-color: #161721;
+    /* background-color: #161721; */
+    background-color: #1d1e2a;
+    transition: background-color 0.3s ease-in-out;
     border: 1px solid var(--border-primary);
     border-radius: 10px;
     padding: 12px 16px;
@@ -159,9 +163,11 @@
     .xrp-btn,
     .token-btn {
       cursor: pointer;
-      margin-bottom: 16px;
+      /* margin-bottom: 16px; */
     }
-
+    .for-flex-1 {
+      min-width: 100px;
+    }
     .f-logo {
       padding: 6.5px;
       width: 32px;
@@ -188,13 +194,30 @@
         brightness(90%) contrast(83%);
     }
   }
-
+  .xrp.active {
+    background-color: #161721;
+  }
   /* new added  */
   .xrp-top-part {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 4px;
+    margin-bottom: 16px;
   }
+  .xrp-top-part .xrp-input-payment {
+    font-weight: 500;
+    font-size: 24px;
+    color: #f5f5f5;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 50%;
+  }
+  .xrp-input-payment::placeholder {
+    color: #757575;
+  }
+
   .xrp-input-part {
     display: flex;
     align-items: center;
@@ -218,6 +241,8 @@
     font-size: 14px;
     color: #757575;
   }
+
+  /* ----------------------XRP Token END ----- */
 }
 
 .xrp:hover h3,
@@ -228,6 +253,7 @@
 
 .xrp.single-sided {
   background-color: #34374a;
+  cursor: not-allowed;
 }
 
 .amount-list-content > *:not(:last-child) {
@@ -933,3 +959,14 @@ button.review:hover {
   }
 }
 /* Modal */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
