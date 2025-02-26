@@ -29,8 +29,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         input.addEventListener("blur", function () {
           setTimeout(() => {
-            if (!document.querySelector(".wallet-input:focus") && 
-                !document.querySelector(".xrp-input-payment:focus")) {
+            if (
+              !document.querySelector(".wallet-input:focus") &&
+              !document.querySelector(".xrp-input-payment:focus")
+            ) {
               xrpContainers.forEach((xrp) => xrp.classList.remove("active"));
             }
           }, 50);
@@ -111,10 +113,18 @@ document.addEventListener("DOMContentLoaded", function () {
             if (tokenNameElement) {
               const tokenName = tokenNameElement.textContent;
 
-              // Set the text of `.token-btn-txt`
+              // Set the text of `.token-name`
               const tokenBtnTxt = modalClone.querySelector(".token-btn-txt");
+              const tokenBtnTxtSingle = modalClone.querySelector(
+                ".token-btn-txt-single"
+              );
+
               if (tokenBtnTxt) {
-                tokenBtnTxt.innerText = tokenName;
+                tokenBtnTxt.textContent = tokenName;
+              }
+
+              if (tokenBtnTxtSingle) {
+                tokenBtnTxtSingle.textContent = tokenName;
               }
 
               console.log("Token Name Set To:", tokenName);
