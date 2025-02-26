@@ -933,7 +933,7 @@ body {
 .table-section {
   .table-scroll {
     width: 100%;
-    overflow-x: auto;
+    /* overflow-x: auto; */
   }
 
   .table-scroll::-webkit-scrollbar {
@@ -947,7 +947,7 @@ body {
   }
 
   .table-content-wrapper {
-    overflow-x: auto !important;
+    /* overflow-x: auto !important; */
   }
 
   table {

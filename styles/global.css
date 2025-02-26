@@ -672,10 +672,12 @@ body {
 
 /* Table section CSS starts here */
 
-.table-section {
+.main-table-section {
   height: calc(100vh - 385px);
   overflow-y: auto;
+}
 
+.table-section {
   .table-scroll {
     width: 100%;
     overflow-x: auto;
@@ -869,15 +871,16 @@ body {
 
   .action-menu {
     position: absolute;
-    top: 0;
-    right: 20px;
+    top: 30px;
+    right: 4px;
     border: 0.5px solid var(--border-primary);
     backdrop-filter: blur(10px);
     border-radius: 16px;
     padding: 0;
-    width: 120px;
+    width: 165px;
     overflow: hidden;
     display: none;
+    z-index: 999;
   }
 
   .action-menu a {
